@@ -1,0 +1,77 @@
+<!-- Flex Container Property -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox p1</title>
+    <style>
+        .container-1 {
+            display: flex;
+            border: 2px solid #b8b8ff ;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            /* flex-flow: row-reverse wrap; -->  It is a shorthand property for setting both flex-direction and flex-wrap properties in
+            one line.*/
+            justify-content: space-around;
+            /*It is used to align the flex items along with the main axis of the container within the
+            flexbox layout.
+
+            It can have these possible values-
+            1. flex-start
+            2. flex-end
+            3. center
+            4. space-between
+            5. space-around
+            6. space-evenly */
+        }
+
+        .box{
+            height: 100px;
+            width: 100px; 
+        }
+        
+        .box1 {
+            background-color: #006d77;
+        }
+        .box2 {
+            background-color: #83c5be;
+        }
+        .box3 {
+            background-color: #ffa69e;
+        }
+
+        .container-2 {
+            display: flex;
+            border:dotted 5px #ffa69e;
+            flex-flow: column wrap;
+            align-items: center;
+            align-content: space-around;
+            gap: 25px ;
+        }
+        
+        .box4 {
+            background-color: #386641;
+        }
+        .box5 {
+            background-color: #6a994e;
+        }
+        .box6 {
+            background-color: #a7c957;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-1">
+        <div class="box box1">BOX1</div>
+        <div class="box box2">BOX2</div>
+        <div class="box box3">BOX3</div>
+    </div>
+
+    <div class="container-2">
+        <div class="box box4">BOX4</div>
+        <div class="box box5">BOX5</div>
+        <div class="box box6">BOX6</div>
+    </div>
+</body>
+</html>

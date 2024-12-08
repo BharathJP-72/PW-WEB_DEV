@@ -1,0 +1,109 @@
+Text Formatting
+
+● <strong>: Makes text bold.(useful for screen reader)
+
+● <b>: Makes text bold.
+
+● <em>: Italicizes text.(useful for screen reader)
+
+● <i>: Italicizes text
+
+● <sub>: Makes text subscript.
+
+● <sup>: Makes text superscript.
+
+● <small>: Makes text small.
+
+● <big>: Makes text big.
+
+● <mark>: Highlights text.
+
+● <abbr>: Represents an abbreviation.
+
+● <acronym>: Represents an acronym. (Not Supported)
+
+● <dfn>: Represents a definition.
+
+● <ins>: The <ins> tag in HTML is used to represent inserted text.
+
+● <a herf="">website</a>
+
+● <br> is used to break line
+
+○ <fieldset>:
+
+● <legend>content</legend>:
+
+● <label for="id_value">LABEL_NAME:</label>: its a content line which holds a place for taking input
+
+○ <input type="text/password/radio/checkbox/number" name="first name" id="user name" value="Bharath" readonly="readonly" size="50" disabled>
+
+○ &lt; [for less than symbol] , &amp; [for '&' symbol]
+
+○ &nbsp; [for spaces in b/w items]
+
+● <video src="" controls autoplay muted></video>
+
+○ <audio src="" controls autoplay muted></audio>
+
+○ <table border cellpadding="25" cellspacing="1.5">
+        <tr>
+            <th>sr.no</th>
+            <th>mon</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>cs</td>
+        </tr>
+    </table>
+
+○<form action="/sendtothisroute" method="get" >
+        <fieldset>
+            <legend>FORM SEQUENCE 002</legend>
+            <label for="user name">PLAYER NAME:</label>
+            <input type="text" name="first name" id="user name">
+        </fieldset>
+    </form>
+
+○<label for="user name">PLAYER NAME:</label>
+
+● <input type="text" name="first name" id="user name" value="Bharath" readonly="readonly" size="50" >
+type="text":
+    Specifies that the input field should accept free-form text input.
+
+name="first name":
+    Defines the name of the input field. This name is used to identify the input when the form is submitted, and it is often used in server-side scripts to process the form data.
+
+id="user name":
+    Provides a unique identifier for the input field. The ID is used to associate the label with the input field and can be referenced in CSS styles and JavaScript.
+
+value="Bharath":
+    Sets the initial value of the input field to "Bharath". This value will be displayed in the input field when the page loads. However, since the readonly attribute is present, the user cannot modify this value.
+
+readonly="readonly":
+    Makes the input field read-only, meaning that the user cannot edit or modify the content. The value specified in the "value" attribute will be displayed, but the user won't be able to change it.
+
+size="50":
+    Specifies the visible width of the input field in characters. In this case, the input field will be 50 characters wide when displayed on the webpage.
+○ 
+○ 
+● 
+○ 
+● 
+● 
+● 
+○ 
+○ 
+○ 
+○ 
+○ 
+● 
+○ 
+○ 
+● 
+
+
+
+
+
+

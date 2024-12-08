@@ -1,0 +1,229 @@
+mysql> create database cars;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases
+    -> ^Z^C
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cars               |
+| db1                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> drop database cars,db1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',db1' at line 1
+mysql> drop database cars;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> drop database db1;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> drop database db10;
+ERROR 1008 (HY000): Can't drop database 'db10'; database doesn'texist
+mysql> create database cars;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use cars;
+Database changed
+mysql> create table car_details(model varchar(20), manufacturer varchar(20));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc car_details;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| model        | varchar(20) | YES  |     | NULL    |       |
+| manufacturer | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+mysql> insert into car_details (model,manufacturer) values ("992gt3rs","Porsche") , ("SF90","Ferrari");
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * form car_details;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form car_details' at line 1
+mysql> select * from car_details;
++-----------+--------------+
+| model     | manufacturer |
++-----------+--------------+
+| 992 gt3rs | Porsche      |
+| SF90      | Ferrari      |
++-----------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE actors ( Firstname VARCHAR(50), Lastname VARCHAR(50), Gender VARCHAR(10), Networth INT
+    -> ^C
+mysql> CREATE TABLE actors ( Firstname VARCHAR(50), Lastname VARCHAR(50), Gender VARCHAR(10), Networth INT );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO actors (Firstname, Lastname, Gender, Networth) VALUES ('Johnny', 'Depp', 'Male', 200), ('Chris', 'Hemsworth', 'Male', 400), ('Scarlett', 'Johnson', 'Female', 500), ('Chris', 'Evans', 'Male', 700), ('Paul', 'Rudd', 'Male', 150), ('Brie', 'Lar
+son', 'Female', 650);
+Query OK, 6 rows affected (0.07 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * form actors
+    -> ^C
+mysql> select * form actors;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form actors' at line 1
+mysql> select * from actors;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Johnny    | Depp      | Male   |      200 |
+| Chris     | Hemsworth | Male   |      400 |
+| Scarlett  | Johnson   | Female |      500 |
+| Chris     | Evans     | Male   |      700 |
+| Paul      | Rudd      | Male   |      150 |
+| Brie      | Larson    | Female |      650 |
++-----------+-----------+--------+----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from actors where firstname = "chris";
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chris     | Hemsworth | Male   |      400 |
+| Chris     | Evans     | Male   |      700 |
++-----------+-----------+--------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from actors where firstname like "ch%";
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chris     | Hemsworth | Male   |      400 |
+| Chris     | Evans     | Male   |      700 |
++-----------+-----------+--------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from actors where lastname like "%n";
++-----------+----------+--------+----------+
+| Firstname | Lastname | Gender | Networth |
++-----------+----------+--------+----------+
+| Scarlett  | Johnson  | Female |      500 |
+| Brie      | Larson   | Female |      650 |
++-----------+----------+--------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from actors where lastname like "%o%";
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chris     | Hemsworth | Male   |      400 |
+| Scarlett  | Johnson   | Female |      500 |
+| Brie      | Larson    | Female |      650 |
++-----------+-----------+--------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from actors order by networth;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Paul      | Rudd      | Male   |      150 |
+| Johnny    | Depp      | Male   |      200 |
+| Chris     | Hemsworth | Male   |      400 |
+| Scarlett  | Johnson   | Female |      500 |
+| Brie      | Larson    | Female |      650 |
+| Chris     | Evans     | Male   |      700 |
++-----------+-----------+--------+----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from actors order by networth desc;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chris     | Evans     | Male   |      700 |
+| Brie      | Larson    | Female |      650 |
+| Scarlett  | Johnson   | Female |      500 |
+| Chris     | Hemsworth | Male   |      400 |
+| Johnny    | Depp      | Male   |      200 |
+| Paul      | Rudd      | Male   |      150 |
++-----------+-----------+--------+----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from actors where firstname like "ch%" order by networth desc;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chris     | Evans     | Male   |      700 |
+| Chris     | Hemsworth | Male   |      400 |
++-----------+-----------+--------+----------+
+2 rows in set (0.00 sec)
+
+mysql> insert into actors values ("Chadwick","Boseman","Male",500);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from actors;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Johnny    | Depp      | Male   |      200 |
+| Chris     | Hemsworth | Male   |      400 |
+| Scarlett  | Johnson   | Female |      500 |
+| Chris     | Evans     | Male   |      700 |
+| Paul      | Rudd      | Male   |      150 |
+| Brie      | Larson    | Female |      650 |
+| Chadwick  | Boseman   | Male   |      500 |
++-----------+-----------+--------+----------+
+7 rows in set (0.00 sec)
+
+mysql> select * from actors where firstname like "ch%" order by networth desc;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chris     | Evans     | Male   |      700 |
+| Chadwick  | Boseman   | Male   |      500 |
+| Chris     | Hemsworth | Male   |      400 |
++-----------+-----------+--------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from actors where firstname like "ch%" order by networth desc, lastname;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chris     | Evans     | Male   |      700 |
+| Chadwick  | Boseman   | Male   |      500 |
+| Chris     | Hemsworth | Male   |      400 |
++-----------+-----------+--------+----------+
+3 rows in set (0.07 sec)
+
+mysql> select * from actors where firstname like "ch%" order by firstname, networth desc;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Chadwick  | Boseman   | Male   |      500 |
+| Chris     | Evans     | Male   |      700 |
+| Chris     | Hemsworth | Male   |      400 |
++-----------+-----------+--------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from actors limit 4;
++-----------+-----------+--------+----------+
+| Firstname | Lastname  | Gender | Networth |
++-----------+-----------+--------+----------+
+| Johnny    | Depp      | Male   |      200 |
+| Chris     | Hemsworth | Male   |      400 |
+| Scarlett  | Johnson   | Female |      500 |
+| Chris     | Evans     | Male   |      700 |
++-----------+-----------+--------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from actors limit 4 offset 2;
++-----------+----------+--------+----------+
+| Firstname | Lastname | Gender | Networth |
++-----------+----------+--------+----------+
+| Scarlett  | Johnson  | Female |      500 |
+| Chris     | Evans    | Male   |      700 |
+| Paul      | Rudd     | Male   |      150 |
+| Brie      | Larson   | Female |      650 |
++-----------+----------+--------+----------+
+4 rows in set (0.00 sec)
+
+mysql>

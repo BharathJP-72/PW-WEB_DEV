@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="title">ONEPIECE</h1>
+        <h3 id="title2"></h3>
+    </div>
+
+    <div>
+        <button id="btn">Explore !!</button>
+    </div>
+
+    <script>
+        /*
+        Keyboard events
+
+keydown
+Fired when a key is pressed.
+
+keyup
+Fired when a key is released.
+
+        Mouse events
+
+auxclick
+Fired when a non-primary pointing device button (e.g., any mouse button other than the left button) has been pressed and released on an element.
+
+click
+Fired when a pointing device button (e.g., a mouse's primary button) is pressed and released on a single element.
+
+contextmenu
+Fired when the user attempts to open a context menu.
+
+dblclick
+Fired when a pointing device button (e.g., a mouse's primary button) is clicked twice on a single element.
+
+mousedown
+Fired when a pointing device button is pressed on an element.
+
+mouseenter
+Fired when a pointing device (usually a mouse) is moved over the element that has the listener attached.
+
+mouseleave
+Fired when the pointer of a pointing device (usually a mouse) is moved out of an element that has the listener attached to it.
+
+mousemove
+Fired when a pointing device (usually a mouse) is moved while over an element.
+
+mouseout
+Fired when a pointing device (usually a mouse) is moved off the element to which the listener is attached or off one of its children.
+
+mouseover
+Fired when a pointing device is moved onto the element to which the listener is attached or onto one of its children.
+
+mouseup
+Fired when a pointing device button is released on an element.*/
+
+        document.addEventListener("mouseover",f1)
+        function f1() {
+            document.getElementById("title").title = "IS REAL"
+            document.getElementById("title2").innerText = "Set Sail"
+        }
+
+        document.addEventListener("click",f2)
+        function f2() {
+            document.getElementById("btn").style.padding = "5px"
+            document.getElementById("btn").style.backgroundColor = "green"
+            document.getElementById("btn").style.color = "white"
+            document.getElementById("btn").innerText = "Congragulations"
+            
+            // when i click btn the heading event also activates
+
+        }
+    </script>
+</body>
+</html>

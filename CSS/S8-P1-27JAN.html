@@ -1,0 +1,113 @@
+                <!-- PSEUDO CLASS & PSEUDO ELEMENTS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .paragraph:hover{
+        background-color: #414141;
+        color: #7fffd4;
+    }
+
+    #button:hover{
+        background-color: #414141;
+        color: #7fffd4;
+        border: 2px solid #808080 ;
+        height: 30px;
+        width: 70px;
+    }
+
+    .link:hover{
+        background-color: #a3ee0d84;
+    }
+
+    .link:active{
+        color: bisque;
+    }
+
+    .link:visited{
+        color: #ee0d0d;
+    }
+
+    #txt-box:focus{
+        background-color: #808080;
+        color: #7fffd4;
+        font-size: 20px;
+    }
+
+    #txt-box{
+        height: 25px;  
+    }
+
+    .link-2:first-child{
+        background-color: #ee0d0d;
+    }
+
+    .link-2:nth-child(2n + 1){
+        background-color: #00ffff;
+    }
+
+    .lorem::first-line{
+        color: #0ce5ba;
+    }
+
+    .lorem::first-letter{
+        font-size: 85px;
+        font-weight: 800;
+    }
+
+    .lorem::after{
+        content: "~~~";
+    }
+
+    .lorem::before{
+        content: "#";
+    }
+
+    ::selection{
+        background-color: #0ee44084
+    }
+
+    ::marker{
+        color: #ee0de3;
+    }
+</style>
+<body>
+                        <!-- PSEUDO CLASS -->
+    <p class="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident similique dolore quaerat velit. Perferendis praesentium mollitia distinctio facere maxime perspiciatis sit rem minima porro? Laboriosam?</p>
+    <label for="button">Click Here to</label>
+    <button id="button">submit</button>
+    <a href="https://youtube.com/" class="link" target="_blank">YouTube</a>
+    <hr>
+    
+    <br>
+    <label for="txt-box">Feedback:</label>
+    <input type="text" id="txt-box">
+    <hr>
+
+    <br>
+    <nav>
+        <a href="https://youtube.com/" class="link-2" target="_blank">YouTube</a>
+        <a href="https://youtube.com/" class="link-2" target="_blank">YouTube</a>
+        <a href="https://youtube.com/" class="link-2" target="_blank">YouTube</a>
+    </nav>
+    <hr>
+
+    <!-- PSEUDO ELEMENT -->
+    <br>
+    <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptatibus expedita alias ipsa aspernatur impedit? Amet eveniet qui soluta atque quibusdam incidunt quos illo quidem quasi minima aliquam maxime odit omnis, natus vitae laborum id fugit quaerat, totam praesentium ratione nam ut unde voluptas. At, veritatis. Distinctio, voluptatem! Ab, aliquid.</p>
+
+    <ul class="list">
+        <li>wano</li>
+        <li>green bit</li>
+        <li>tequila wolf</li>
+        <li>amazon lilly</li>
+    </ul>
+
+
+</body>
+</html>

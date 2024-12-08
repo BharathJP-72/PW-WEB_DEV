@@ -1,0 +1,84 @@
+<!-- Album with Grid -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+    <style>
+        .container {
+            display: grid;
+            height: 900px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            
+        }
+        
+        .box {
+            /* height: 100px;
+            width: 100px; */
+            display: flex;
+            flex-direction: column;
+        }
+        .sbox{
+            background-color: blanchedalmond;
+            height: 100px;
+            width: 150px;
+            overflow: hidden;
+        }
+
+        .sbox img {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+        .box1 {
+            background-color: yellow;
+            grid-row-start: 1;
+            grid-row-end: 3;  
+        }
+        .box2 {
+            background-color: orange;
+        }
+        .box3 {
+            background-color: lavender;
+        }
+        .box4 {
+            background-color: lime;
+        }
+        .box5 {
+            background-color: blue;
+        }
+        .box6 {
+            background-color: violet;
+        }
+        .box7 {
+            background-color: black;
+        }
+        .box8 {
+            background-color: grey;
+        }
+        .box9 {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">
+            <div class="sbox">            
+                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt=""></div>
+        </div>
+        <div class="box box2">
+            <!-- <img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_640.jpg" alt=""> -->
+        </div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+    </div>
+</body>
+</html>

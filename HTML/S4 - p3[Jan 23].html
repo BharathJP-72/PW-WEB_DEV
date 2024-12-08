@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+</head>
+<body>
+    <!-- FORMS -->
+    <form >
+        <fieldset>
+            <legend>FORM SEQUENCE 001</legend>
+            <label for="user name">PLAYER NAME:</label>
+            <input type="text" name="first name" id="user name" value="Bharath" readonly="readonly" size="25" >
+            <br>
+            <label for="skills">ENTER SKILLS:</label>
+            <textarea name="skill inventory" id="skills" cols="30" rows="10" placeholder="you must have minimum two  skills" autofocus></textarea>
+            <br>
+            <label for="country">ENTER COUNTRY : </label>
+            <!-- <input type="text" id="country" value="INDIA" disabled > -->
+            <select name="country" id="country">
+                <option value="ind">EAST BLUE</option>
+                <option value="us">WEST BLUE</option>
+                <option value="nb"></option>
+                <option value=""></option>
+            </select>
+            <br>
+            <label for="dob">DOB: </label>
+            <input type="date" name="dob" id="dob">
+            <br>
+            <label for="password">ENTER PASSWORD: </label>
+            <input type="password" name="password" id="password">
+            <br>
+            <label for="male">MALE</label>
+            <input type="radio" id="male" value="MALE" name="gender">
+            <br>
+            <label for="female">FEMALE</label>
+            <input type="radio" id="female" value="FEMALE" name="gender">
+            <br>
+            <label for="">SELECT ISLANDS</label>
+            <br>
+            <label for="wano">wano</label>
+            <input type="checkbox" name="wano" id="wano">
+            <br>
+            <label for="egg head">egg head</label>
+            <input type="checkbox" name="egg head" id="egg head">
+            <br>
+            <label for="tequila wolf">tequila wolf</label>
+            <input type="checkbox" name="tequila wolf" id="tequila wolf">
+            <br>
+            <label for="age">ENTER YOUR AGE : </label>
+            <input type="number" min="16" max="26">
+            <br>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <!-- FORM - 2 -->
+    <form action="/sendtothisroute" method="get" >
+        <fieldset>
+            <legend>FORM SEQUENCE 002</legend>
+            <label for="user name">PLAYER NAME:</label>
+            <input type="text" name="first name" id="user name">
+            <br>
+            <label for="skills">ENTER SKILLS:</label>
+            <textarea name="skill inventory" id="skills" cols="30" rows="10"></textarea>
+            <br>
+            <label for="dob">DOB: </label>
+            <input type="date" name="dob" id="dob">
+            <br>
+            <label for="password">ENTER PASSWORD: </label>
+                <input type="password" name="password" id="password">
+            <br>
+            <label for="male">MALE</label>
+            <input type="radio" id="male" value="MALE" name="gender">
+            <br>
+            <label for="female">FEMALE</label>
+            <input type="radio" id="female" value="FEMALE" name="gender">
+            <br>
+            <label for="">SELECT ISLANDS</label>
+            <br>
+            <label for="wano">wano</label>
+            <input type="checkbox" name="wano" id="wano">
+            <br>
+            <label for="egg head">egg head</label>
+            <input type="checkbox" name="egg head" id="egg head">
+            <br>
+            <label for="tequila wolf">tequila wolf</label>
+            <input type="checkbox" name="tequila wolf" id="tequila wolf">
+            <br>
+            <input type="submit">
+            </fieldset>
+    </form>
+
+</body>
+</html>
+
+<!-- for type="radio" the value="value-xyz" is sent to the server -->
+<!-- <form action="/sendtothisroute method="get(or post)">
+
+</form> -->
+<!-- method="get" sends the data through url to the server method="post" the server expects data from the request body -->

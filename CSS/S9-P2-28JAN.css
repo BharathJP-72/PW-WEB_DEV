@@ -1,0 +1,41 @@
+/* TYPICAL BREAK POINTS FOR MEDIA QUERIES */
+
+/* extra small devices(phones, <=600px) */
+body{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+@media (max-width: 600px ) {
+    body{
+        background-color: #fff;
+    }
+}
+
+/* small devices(portrait tablets and large phones, >=600px) */
+@media (min-width: 600px) {
+    body{
+        background-color: #ffffff;
+    }
+}
+
+/* medium devices(landscape tablets, >=768px) */
+@media (min-width: 768px) {
+    body{
+        background-color: #f5afaf;
+    }
+}
+
+/*large devices(laptops/desktops, >=992px) */
+@media (min-width: 992px) {
+    body{
+        background-color: #f94343;
+    }
+}
+
+/*extra large devices(large laptops and desktops, 1200px) */
+@media (min-width: 1200px) {
+    body{
+        background-color: #fe0000;
+    }
+}

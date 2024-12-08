@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.container
+{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section
+{
+    height: 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    text-shadow: 1.5px 2.5px 4px black;
+    color: aliceblue;
+    font-size: xx-large;
+    scroll-snap-align: start;
+    
+    
+}
+
+.s1
+{
+    background-color: red;
+    padding-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.s1 img
+{
+    height: 79vh;
+    width: 500px;
+    margin-left: 180px;
+    border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: 5px 5px 5px black ;
+
+}
+
+.s1 h1
+{
+    align-self: center;
+    margin-left: 50px;
+}
+.s2
+{
+    background-image: url(./IMAGES/wallpaperflare.com_wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 75px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.s3
+{
+    background-color: yellow;
+    padding-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    font-size: small;
+}
+
+.s3 div
+{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.s3 h1
+{
+    text-align: center;
+    border-bottom: solid 2.5px red;
+}
+.s3 div p
+{
+    border: solid 2px red;
+    padding: 15px;
+    border-radius: 15px;
+    height: 50vh;
+}
+
+
+.s4
+{
+    background-color: greenyellow;
+    padding-top: 75px;
+}
+
+ul img
+{
+    height: 60px;
+}
+
+ul
+{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    background-color: aquamarine;
+    padding: 15px 0 0 0;
+    position: fixed;
+    width: 100vw;
+
+}

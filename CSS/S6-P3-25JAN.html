@@ -1,0 +1,98 @@
+        <!-- SELECTORS: COMBINATORS & ATTRIBUTE SELECTORS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* this type of css combinator: here the bgc is applied to all the p tags whic are available in the main element regaardless whether its enclosed in another element */
+       main p{
+            background-color: #f40909;
+        }
+        
+        /* this type of css combinator: here the bgc is applied to all the p tags whic are available in the main element if and only if they arent the child of another element in the main element */
+        main > p{
+            background-color: #0716ed
+        }
+
+        /*  this type of css combinator: here the bgc is applied to the p element just after the h2 element */
+        h2 + p{
+            background-color: #e709d8f5
+        }
+
+        /* this type of css combinator: here the bgc is applied to all the p element after the h3 element */
+        h3 ~ p{
+            background-color: #1dfd09;
+        }
+        /* this is an attribute selector: here the bgc is applied to where ever attribute"target=_blank" is present */
+        [target="_blank"] {
+            background-color: #a6ed21;
+        }
+
+        /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to a value with "logo" shpuld be present at any position (e.g., logo 1, logo circle, great logo) */
+        [alt~="logo"]{
+            background-color: #0865f0;
+            padding: 35px;
+        }
+
+         /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to value with "##logo" (e.g., ##logo) */
+        [alt|="##logo"]{
+            background-color: #4e08f0;
+            padding: 15px;
+        }
+        /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to value starts with "logo"(e.g., logo123) */
+        [alt^="logo"]{
+            background-color: #f008e0;
+            padding: 15px;
+        }
+
+        /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to value ends with "logo"(e.g., logo123) */
+        [alt$="logo"]{
+            border: 10px solid #e70909;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>WEB DEVELOPMENT!!</h2>
+    <p>first paragraph</p>
+    <p>second paragraph</p>
+
+    <h2>CSS!!</h2>
+    <p>third paragraph</p>
+    <p>fourh paragraph</p>
+
+    <h3>html!!</h3>
+    <p>5th paragraph</p>
+    <p>6th paragraph</p>
+    <p>7th paragraph</p>
+
+
+    <main>
+        <h1>first_sequence</h1>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odit minus, neque tempore deleniti commodi repellat! Eveniet velit ducimus possimus, repudiandae nobis quaerat odio inventore sunt molestias, placeat temporibus vel!</p>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam atque et nostrum accusantium at impedit autem voluptatum mollitia recusandae! Excepturi magni molestiae unde possimus cumque facere nulla, ipsa voluptatum quisquam!</p>
+        </section>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quam est laboriosam consequuntur aspernatur deleniti, nostrum voluptatem. Voluptate modi praesentium, ex quo asperiores obcaecati possimus!
+        </p>
+    </main>
+    <a target="_blank" href="https://www.youtube.com/">YouTube</a>
+    
+    <a href="https://maps.google.com/">Maps</a>
+    
+    <a target="_blank" href="https://chat.openai.com/chat">ChatGPT</a>
+    <br>
+    
+    <img src="https://i.pinimg.com/236x/18/82/f7/1882f7e15ce3a8c9db2c43d07c5fb247.jpg" alt="logo onepiece">
+
+    <img src="https://i.pinimg.com/236x/81/a3/1c/81a31cff7565c620bcc94e246e42f7e9.jpg" alt="kaido logo">
+    <br>
+
+    <img src="https://i.pinimg.com/236x/8a/01/85/8a0185deb73975f48c920e0a8fba5fe6.jpg" alt="##logo">
+</body>
+</html>

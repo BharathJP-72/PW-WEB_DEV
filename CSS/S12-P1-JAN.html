@@ -1,0 +1,80 @@
+<!-- GRID -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        
+        .container {
+            display: grid;
+            height: 900px; 
+            /* width: 900px;   */ 
+            border: 3px solid black;
+            grid-template-columns: repeat(3, 1fr);
+            /* The grid-template-columns property defines the number of columns in your grid
+            layout, and it can define the width of each column. */
+            grid-template-rows: repeat(3, 1fr);
+            column-gap: 0px;
+            row-gap: 0px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px; 
+            
+            
+            /* In CSS, the order in which styles are defined matters when it comes to specificity and the cascade. However, in this case, the issue is not related to the order of your CSS rules.
+
+            The problem you're experiencing is due to the fact that the .box class has a fixed height and width set to 100px by 100px. When you apply this class to the boxes within your grid, it overrides the size defined by the grid layout. The grid layout is set to distribute the available space equally among the rows and columns, but the fixed size of the .box class takes precedence.
+
+            To resolve this issue, you should remove the fixed height and width from the .box class, allowing the grid layout to determine the size of the boxes. */
+        }
+
+        .box1{
+            background-color: grey;
+        }
+        .box2{
+            background-color:black ;
+        }
+        .box3{
+            background-color: yellow;
+        }
+        .box4{
+            background-color: blue;
+        }
+        .box5{
+          background-color: green;
+        }
+        .box6{
+            background-color: red;
+        }
+        .box7{
+            background-color: magenta;
+        }
+        .box8{
+            background-color: silver;
+        }
+        .box9{
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+        
+    </div>
+</body>
+</html>

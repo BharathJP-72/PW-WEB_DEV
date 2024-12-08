@@ -1,0 +1,2652 @@
+mysql> use lco_films
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_lco_films |
++---------------------+
+| actor               |
+| address             |
+| category            |
+| city                |
+| country             |
+| film                |
+| film_actor          |
+| film_category       |
+| language            |
++---------------------+
+9 rows in set (0.00 sec)
+
+mysql> select first_name, last_name, address, city from actor join address on actor. address
+    -> _id = address. address_id join city on city.city_id = address.city_id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '_id = address. address_id join city on city.city_id = address.city_id' at line 2
+mysql> select first_name, last_name, address, city from actor join address on actor. address_id = address. address_id join city on city.city_id = address.city_id;
++-------------+--------------+----------------------------------------+----------------------------+
+| first_name  | last_name    | address                                | city        |
++-------------+--------------+----------------------------------------+----------------------------+
+| PENELOPE    | GUINESS      | 47 MySakila Drive                      | Lethbridge        |
+| NICK        | WAHLBERG     | 1411 Lillydale Drive                   | Woodridge        |
+| ED          | CHASE        | 28 MySQL Boulevard                     | Woodridge        |
+| JENNIFER    | DAVIS        | 23 Workhaven Lane                      | Lethbridge        |
+| JOHNNY      | LOLLOBRIGIDA | 1913 Hanoi Way                         | Sasebo        |
+| BETTE       | NICHOLSON    | 692 Joliet Street                      | Athenai        |
+| GRACE       | MOSTEL       | 1121 Loja Avenue                       | San Bernardino        |
+| MATTHEW     | JOHANSSON    | 1566 Inegl Manor                       | Myingyan        |
+| JOE         | SWANK        | 1795 Santiago de Compostela Way        | Laredo        |
+| CHRISTIAN   | GABLE        | 53 Idfu Parkway                        | Nantou        |
+| ZERO        | CAGE         | 900 Santiago de Compostela Parkway     | Kragujevac        |
+| KARL        | BERRY        | 613 Korolev Drive                      | Masqat        |
+| UMA         | WOOD         | 1867 San Juan Bautista Tuxtepec Avenue | Ivanovo        |
+| VIVIEN      | BERGEN       | 262 A Corua (La Corua) Parkway         | Tangail        |
+| CUBA        | OLIVIER      | 334 Munger (Monghyr) Lane              | Arak        |
+| FRED        | COSTNER      | 915 Ponce Place                        | Basel        |
+| HELEN       | VOIGHT       | 1947 Poos de Caldas Boulevard          | Chiayi        |
+| DAN         | TORN         | 1936 Lapu-Lapu Parkway                 | Deba Habe        |
+| BOB         | FAWCETT      | 211 Chiayi Drive                       | Etawah        |
+| LUCILLE     | TRACY        | 602 Paarl Street                       | Pavlodar        |
+| KIRSTEN     | PALTROW      | 1697 Tanauan Lane                      | Pathankot        |
+| ELVIS       | MARX         | 671 Graz Street                        | Nador        |
+| SANDRA      | KILMER       | 786 Aurora Avenue                      | Shimonoseki        |
+| CAMERON     | STREEP       | 1213 Ranchi Parkway                    | Mysore        |
+| KEVIN       | BLOOM        | 1214 Hanoi Way                         | Lincoln        |
+| RIP         | CRAWFORD     | 1632 Bislig Avenue                     | Pak Kret        |
+| JULIA       | MCQUEEN      | 1447 Imus Way                          | Faaa        |
+| WOODY       | HOFFMAN      | 17 Kabul Boulevard                     | Nagareyama        |
+| ALEC        | WAYNE        | 1124 Buenaventura Drive                | al-Hawiya        |
+| SANDRA      | PECK         | 492 Cam Ranh Street                    | Baybay        |
+| SISSY       | SOBIESKI     | 808 Bhopal Manor                       | Yamuna Nagar        |
+| TIM         | HACKMAN      | 1966 Amroha Avenue                     | Daxian        |
+| MILLA       | PECK         | 927 Baha Blanca Parkway                | Simferopol        |
+| AUDREY      | OLIVIER      | 1206 Dos Quebradas Place               | Rio Claro        |
+| JUDY        | DEAN         | 725 Isesaki Place                      | Jedda        |
+| BURT        | DUKAKIS      | 33 Gorontalo Way                       | Kamarhati        |
+| VAL         | BOLGER       | 57 Arlington Manor                     | Shivapuri        |
+| TOM         | MCKELLEN     | 1780 Hino Boulevard                    | Liepaja        |
+| GOLDIE      | BRODY        | 1717 Guadalajara Lane                  | Saint Louis        |
+| JOHNNY      | CAGE         | 943 Tokat Street                       | Vaduz        |
+| JODIE       | DEGENERES    | 269 Cam Ranh Parkway                   | Chisinau        |
+| TOM         | MIRANDA      | 1551 Rampur Lane                       | Changhwa        |
+| KIRK        | JOVOVICH     | 1688 Okara Way                         | Mardan        |
+| NICK        | STALLONE     | 832 Nakhon Sawan Manor                 | Zalantun        |
+| REESE       | KILMER       | 1308 Arecibo Way                       | Augusta-Richmond County    |
+| PARKER      | GOLDBERG     | 264 Bhimavaram Manor                   | Charlotte Amalie        |
+| JULIA       | BARRYMORE    | 1913 Kamakura Place                    | Jelets        |
+| FRANCES     | DAY-LEWIS    | 1386 Yangor Avenue                     | Toulon        |
+| ANNE        | CRONYN       | 848 Tafuna Manor                       | Ktahya        |
+| NATALIE     | HOPKINS      | 115 Hidalgo Parkway                    | Omdurman        |
+| GARY        | PHOENIX      | 1074 Binzhou Manor                     | Mannheim        |
+| CARMEN      | HUNT         | 798 Cianjur Avenue                     | Yuncheng        |
+| MENA        | TEMPLE       | 781 Shimonoseki Drive                  | Hidalgo        |
+| PENELOPE    | PINKETT      | 1792 Valle de la Pascua Place          | Siegen        |
+| FAY         | KILMER       | 419 Iligan Lane                        | Bhopal        |
+| DAN         | HARRIS       | 1427 A Corua (La Corua) Place          | Baha Blanca        |
+| JUDE        | CRUISE       | 241 Mosul Lane                         | Dos Quebradas        |
+| CHRISTIAN   | AKROYD       | 1967 Sincelejo Place                   | Gandhinagar        |
+| DUSTIN      | TAUTOU       | 1107 Nakhon Sawan Avenue               | Nezahualcyotl        |
+| HENRY       | BERRY        | 140 Chiayi Parkway                     | Sumy        |
+| CHRISTIAN   | NEESON       | 682 Garden Grove Place                 | Memphis        |
+| JAYNE       | NEESON       | 1157 Nyeri Loop                        | Maikop        |
+| CAMERON     | WRAY         | 1752 So Leopoldo Parkway               | Mukateve        |
+| RAY         | JOHANSSON    | 782 Mosul Street                       | Brockton        |
+| ANGELA      | HUDSON       | 588 Vila Velha Manor                   | Kimchon        |
+| MARY        | TANDY        | 1001 Miyakonojo Lane                   | Taizz        |
+| JESSICA     | BAILEY       | 42 Brindisi Place                      | Yerevan        |
+| RIP         | WINSLET      | 1027 Songkhla Manor                    | Molodetno        |
+| KENNETH     | PALTROW      | 1410 Benin City Parkway                | Pereira        |
+| MICHELLE    | MCCONAUGHEY  | 1158 Mandi Bahauddin Parkway           | Datong        |
+| ADAM        | GRANT        | 752 Ondo Loop                          | Miyakonojo        |
+| SEAN        | WILLIAMS     | 1309 Weifang Street                    | Tallahassee        |
+| GARY        | PENN         | 316 Uruapan Street                     | Ipoh        |
+| MILLA       | KEITEL       | 456 Escobar Way                        | Jakarta        |
+| BURT        | POSEY        | 1749 Daxian Place                      | Apeldoorn        |
+| ANGELINA    | ASTAIRE      | 804 Elista Drive                       | Enshi        |
+| CARY        | MCCONAUGHEY  | 543 Bergamo Avenue                     | Ibirit        |
+| GROUCHO     | SINATRA      | 1002 Ahmadnagar Manor                  | Huixquilucan        |
+| MAE         | HOFFMAN      | 682 Junan Way                          | Klerksdorp        |
+| RALPH       | CRUZ         | 1050 Garden Grove Avenue               | Jastrzebie-Zdrj        |
+| SCARLETT    | DAMON        | 1987 Coacalco de Berriozbal Loop       | Shubra al-Khayma        |
+| WOODY       | JOLIE        | 801 Hagonoy Drive                      | Smolensk        |
+| BEN         | WILLIS       | 1089 Iwatsuki Avenue                   | Kirovo-Tepetsk        |
+| JAMES       | PITT         | 765 Southampton Drive                  | Qalyub        |
+| MINNIE      | ZELLWEGER    | 1540 Wroclaw Drive                     | Chandrapur        |
+| GREG        | CHAPLIN      | 1079 Tel Aviv-Jaffa Boulevard          | Cuman        |
+| SPENCER     | PECK         | 954 Kimchon Place                      | Uttarpara-Kotrung        |
+| KENNETH     | PESCI        | 43 Dadu Avenue                         | Bhilwara        |
+| CHARLIZE    | DENCH        | 660 Jedda Boulevard                    | Bellevue        |
+| SEAN        | GUINESS      | 817 Bradford Loop                      | Changzhou        |
+| CHRISTOPHER | BERRY        | 442 Rae Bareli Place                   | Duisburg        |
+| KIRSTEN     | AKROYD       | 146 Johannesburg Way                   | Matamoros        |
+| ELLEN       | PRESLEY      | 1229 Valencia Parkway                  | Stara Zagora        |
+| KENNETH     | TORN         | 1029 Dzerzinsk Manor                   | Touliu        |
+| DARYL       | WAHLBERG     | 1666 Beni-Mellal Place                 | Clarksville        |
+| GENE        | WILLIS       | 1839 Szkesfehrvr Parkway               | Luzinia        |
+| MEG         | HAWKE        | 1848 Salala Boulevard                  | Ocumare del Tuy        |
+| CHRIS       | BRIDGES      | 793 Cam Ranh Avenue                    | Lancaster        |
+| JIM         | MOSTEL       | 1386 Nakhon Sawan Boulevard            | Pyongyang        |
+| SPENCER     | DEPP         | 1587 Sullana Lane                      | Hohhot        |
+| SUSAN       | DAVIS        | 1964 Gijn Manor                        | Shimoga        |
+| WALTER      | TORN         | 1294 Firozabad Drive                   | Pingxiang        |
+| MATTHEW     | LEIGH        | 261 Saint Louis Way                    | Torren        |
+| PENELOPE    | CRONYN       | 842 Salzburg Lane                      | Tarsus        |
+| SIDNEY      | CROWE        | 533 al-Ayn Boulevard                   | Compton        |
+| GROUCHO     | DUNST        | 447 Surakarta Loop                     | Kisumu        |
+| GINA        | DEGENERES    | 154 Tallahassee Loop                   | Hami        |
+| WARREN      | NOLTE        | 698 Otsu Street                        | Cayenne        |
+| SYLVESTER   | DERN         | 1010 Klerksdorp Way                    | Graz        |
+| SUSAN       | DAVIS        | 741 Ambattur Manor                     | s-Hertogenbosch        |
+| CAMERON     | ZELLWEGER    | 1854 Tieli Street                      | Liaocheng        |
+| RUSSELL     | BACALL       | 333 Goinia Way                         | Grand Prairie        |
+| MORGAN      | HOPKINS      | 1532 Dzerzinsk Way                     | Merlo        |
+| MORGAN      | MCDORMAND    | 850 Salala Loop                        | Nuuk        |
+| HARRISON    | BALE         | 356 Olomouc Manor                      | Anpolis        |
+| DAN         | STREEP       | 226 Halifax Street                     | Korla        |
+| RENEE       | TRACY        | 85 San Felipe de Puerto Plata Drive    | Yantai        |
+| CUBA        | ALLEN        | 1736 Cavite Place                      | Idfu        |
+| WARREN      | JACKMAN      | 446 Kirovo-Tepetsk Lane                | Higashiosaka        |
+| PENELOPE    | MONROE       | 1192 Tongliao Street                   | Sharja        |
+| LIZA        | BERGMAN      | 1308 Sumy Loop                         | Fuzhou        |
+| SALMA       | NOLTE        | 1831 Nam Dinh Loop                     | Mandaluyong        |
+| JULIANNE    | DENCH        | 647 A Corua (La Corua) Street          | Naju        |
+| SCARLETT    | BENING       | 47 Syktyvkar Lane                      | Ciomas        |
+| ALBERT      | NOLTE        | 1944 Bamenda Way                       | Warren        |
+| FRANCES     | TOMEI        | 226 Brest Manor                        | Sunnyvale        |
+| KEVIN       | GARLAND      | 457 Tongliao Loop                      | Inegl        |
+| CATE        | MCQUEEN      | 346 Skikda Parkway                     | Jalib al-Shuyukh        |
+| DARYL       | CRAWFORD     | 1215 Pyongyang Parkway                 | Usak        |
+| GRETA       | KEITEL       | 387 Mwene-Ditu Drive                   | Ashgabat        |
+| JANE        | JACKMAN      | 751 Lima Loop                          | Aden        |
+| ADAM        | HOPPER       | 1842 Luzinia Boulevard                 | Zanzibar        |
+| RICHARD     | PENN         | 1168 Najafabad Parkway                 | Kabul        |
+| GENE        | HOPKINS      | 1473 Changhwa Parkway                  | Coacalco de Berriozbal     |
+| RITA        | REYNOLDS     | 829 Grand Prairie Way                  | Maring        |
+| ED          | MANSFIELD    | 1497 Yuzhou Drive                      | London        |
+| MORGAN      | WILLIAMS     | 1103 Bilbays Parkway                   | Xiangfan        |
+| LUCILLE     | DEE          | 430 Alessandria Loop                   | Saarbrcken        |
+| EWAN        | GOODING      | 1926 Gingoog Street                    | Syrakusa        |
+| WHOOPI      | HURT         | 1256 Bislig Boulevard                  | Botosani        |
+| CATE        | HARRIS       | 1304 s-Hertogenbosch Way               | Blumenau        |
+| JADA        | RYDER        | 885 Yingkou Manor                      | Zaria        |
+| RIVER       | DEAN         | 176 Mandaluyong Place                  | Jhansi        |
+| ANGELA      | WITHERSPOON  | 81 Hodeida Way                         | Jaipur        |
+| KIM         | ALLEN        | 1027 Banjul Place                      | Halisahar        |
+| ALBERT      | JOHANSSON    | 898 Belm Manor                         | Botshabelo        |
+| FAY         | WINSLET      | 1201 Qomsheh Manor                     | Aparecida de Goinia        |
+| EMILY       | DEE          | 1679 Antofagasta Street                | Ciudad del Este        |
+| RUSSELL     | TEMPLE       | 1191 Sungai Petani Boulevard           | Kansas City        |
+| JAYNE       | NOLTE        | 68 Ponce Parkway                       | Hanoi        |
+| GEOFFREY    | HESTON       | 1892 Nabereznyje Telny Lane            | Tafuna        |
+| BEN         | HARRIS       | 715 So Bernardo do Campo Lane          | Sungai Petani        |
+| MINNIE      | KILMER       | 430 Kumbakonam Drive                   | Santa F        |
+| MERYL       | GIBSON       | 1838 Tabriz Lane                       | Dhaka        |
+| IAN         | TANDY        | 1145 Vilnius Manor                     | San Felipe del Progreso    |
+| FAY         | WOOD         | 1635 Kuwana Boulevard                  | Hiroshima        |
+| GRETA       | MALDEN       | 469 Nakhon Sawan Street                | Teboksary        |
+| VIVIEN      | BASINGER     | 1009 Zanzibar Lane                     | Arecibo        |
+| LAURA       | BRODY        | 114 Jalib al-Shuyukh Manor             | Yaound        |
+| CHRIS       | DEPP         | 154 Oshawa Manor                       | Probolinggo        |
+| HARVEY      | HOPE         | 1049 Matamoros Parkway                 | Gulbarga        |
+| OPRAH       | KILMER       | 1641 Changhwa Place                    | Bamenda        |
+| CHRISTOPHER | WEST         | 368 Hunuco Boulevard                   | Namibe        |
+| HUMPHREY    | WILLIS       | 401 Sucre Boulevard                    | Manchester        |
+| AL          | GARLAND      | 1368 Maracabo Boulevard                | South Hill        |
+| NICK        | DEGENERES    | 913 Coacalco de Berriozbal Loop        | Arlington        |
+| LAURENCE    | BULLOCK      | 1224 Huejutla de Reyes Boulevard       | Brescia        |
+| WILL        | WILSON       | 1860 Taguig Loop                       | Ciparay        |
+| KENNETH     | HOFFMAN      | 898 Jining Lane                        | Oulu        |
+| MENA        | HOPPER       | 780 Kimberley Way                      | Tabuk        |
+| OLYMPIA     | PFEIFFER     | 1912 Emeishan Drive                    | Balikesir        |
+| GROUCHO     | WILLIAMS     | 1698 Southport Loop                    | Pachuca de Soto        |
+| ALAN        | DREYFUSS     | 817 Laredo Avenue                      | Guadalajara        |
+| MICHAEL     | BENING       | 1658 Jastrzebie-Zdrj Loop              | Nyeri        |
+| WILLIAM     | HACKMAN      | 614 Pak Kret Street                    | Addis Abeba        |
+| JON         | CHASE        | 661 Chisinau Lane                      | Kolpino        |
+| GENE        | MCKELLEN     | 41 El Alto Parkway                     | Parbhani        |
+| LISA        | MONROE       | 519 Nyeri Manor                        | Santo Andr        |
+| ED          | GUINESS      | 381 Kabul Way                          | Hsichuh        |
+| JEFF        | SILVERSTONE  | 687 Alessandria Parkway                | Sanaa        |
+| MATTHEW     | CARREY       | 1519 Santiago de los Caballeros Loop   | Mwene-Ditu        |
+| DEBBIE      | AKROYD       | 1957 Yantai Lane                       | Sorocaba        |
+| RUSSELL     | CLOSE        | 651 Pathankot Loop                     | Miraj        |
+| HUMPHREY    | GARLAND      | 1354 Siegen Street                     | Angra dos Reis        |
+| MICHAEL     | BOLGER       | 1599 Plock Drive                       | Tete
+                       |
+| JULIA       | ZELLWEGER    | 951 Stara Zagora Manor                 | Patiala        |
+| RENEE       | BALL         | 1908 Gaziantep Place                   | Tiefa        |
+| ROCK        | DUKAKIS      | 230 Urawa Drive                        | Adoni        |
+| CUBA        | BIRCH        | 1920 Weifang Avenue                    | Rampur        |
+| AUDREY      | BAILEY       | 532 Toulon Street                      | Santiago de los Caballeros |
+| GREGORY     | GOODING      | 503 Sogamoso Loop                      | Sumqayit        |
+| JOHN        | SUVARI       | 604 Bern Place                         | Ranchi        |
+| BURT        | TEMPLE       | 98 Stara Zagora Boulevard              | Buenaventura        |
+| MERYL       | ALLEN        | 1479 Rustenburg Boulevard              | Tanza        |
+| JAYNE       | SILVERSTONE  | 1293 Nam Dinh Way                      | Boa Vista        |
+| BELA        | WALKEN       | 1628 Nagareyama Lane                   | San Lorenzo        |
+| REESE       | WEST         | 619 Hunuco Avenue                      | Matsue        |
+| MARY        | KEITEL       | 127 Iwakuni Boulevard                  | Hagonoy        |
+| JULIA       | FAWCETT      | 45 Aparecida de Goinia Place           | Satna        |
+| THORA       | TEMPLE       | 168 Cianjur Manor                      | Iwatsuki        |
++-------------+--------------+----------------------------------------+----------------------------+
+200 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cars               |
+| db1                |
+| information_schema |
+| lco_films          |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use cars
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_cars |
++----------------+
+| actors         |
+| car_details    |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> desc actors;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| Firstname | varchar(50) | YES  |     | NULL    |                |
+| Lastname  | varchar(50) | YES  |     | NULL    |                |
+| Gender    | varchar(10) | YES  |     | NULL    |                |
+| Networth  | int         | YES  |     | NULL    |                |
+| id        | int         | NO   | PRI | NULL    | auto_increment |
++-----------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE actor
+    -> ADD length smallint;
+ERROR 1146 (42S02): Table 'cars.actor' doesn't exist
+mysql> ALTER TABLE actor ADD length smallint;
+ERROR 1146 (42S02): Table 'cars.actor' doesn't exist
+mysql> ALTER TABLE actors ADD length smallint;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc actors;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| Firstname | varchar(50) | YES  |     | NULL    |                |
+| Lastname  | varchar(50) | YES  |     | NULL    |                |
+| Gender    | varchar(10) | YES  |     | NULL    |                |
+| Networth  | int         | YES  |     | NULL    |                |
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| length    | smallint    | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> ALTER TABLE actors MODIFY length int;
+Query OK, 7 rows affected (0.09 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> desc actors;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| Firstname | varchar(50) | YES  |     | NULL    |                |
+| Lastname  | varchar(50) | YES  |     | NULL    |                |
+| Gender    | varchar(10) | YES  |     | NULL    |                |
+| Networth  | int         | YES  |     | NULL    |                |
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| length    | int         | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> ALTER TABLE actors DROP length;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC actors;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| Firstname | varchar(50) | YES  |     | NULL    |                |
+| Lastname  | varchar(50) | YES  |     | NULL    |                |
+| Gender    | varchar(10) | YES  |     | NULL    |                |
+| Networth  | int         | YES  |     | NULL    |                |
+| id        | int         | NO   | PRI | NULL    | auto_increment |
++-----------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> USE lco_films;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_lco_films |
++---------------------+
+| actor               |
+| address             |
+| category            |
+| city                |
+| country             |
+| film                |
+| film_actor          |
+| film_category       |
+| language            |
++---------------------+
+9 rows in set (0.00 sec)
+
+mysql> DESC category;
++-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+| Field       | Type             | Null | Key | Default           | Extra                       |
++-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+| category_id | tinyint unsigned | NO   | PRI | NULL              | auto_increment                       |
+| name        | varchar(25)      | NO   |     | NULL              |
+                                      |
+| last_update | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> DESC address;
++-------------+-------------------+------+-----+-------------------+-----------------------------------------------+
+| Field       | Type              | Null | Key | Default           | Extra                        |
++-------------+-------------------+------+-----+-------------------+-----------------------------------------------+
+| address_id  | smallint unsigned | NO   | PRI | NULL              | auto_increment                        |
+| address     | varchar(50)       | NO   |     | NULL              |                        |
+| address2    | varchar(50)       | YES  |     | NULL              |                        |
+| district    | varchar(20)       | NO   |     | NULL              |                        |
+| city_id     | smallint unsigned | NO   | MUL | NULL              |                        |
+| postal_code | varchar(10)       | YES  |     | NULL              |                        |
+| phone       | varchar(20)       | NO   |     | NULL              |                        |
+| last_update | timestamp         | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++-------------+-------------------+------+-----+-------------------+-----------------------------------------------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT district FROM address;
++----------------------+
+| district             |
++----------------------+
+| Alberta              |
+| QLD                  |
+| Nagasaki             |
+| California           |
+| Attika               |
+| Mandalay             |
+| Nantou               |
+| Texas                |
+| Central Serbia       |
+| Hamilton             |
+| Masqat               |
+| Esfahan              |
+| Kanagawa             |
+| Haryana              |
+| Osmaniye             |
+| Madhya Pradesh       |
+| England              |
+| Kalmykia             |
+| Kaduna               |
+| Northern Cape        |
+| Nothwest Border Prov |
+| Dhaka                |
+| Rabat-Sal-Zammour-Z  |
+| Liepaja              |
+| Crdoba               |
+| Sind                 |
+|                      |
+| Southern Mindanao    |
+| Bihar                |
+| Yamaguchi            |
+| Taipei               |
+| West Bengali         |
+| Uttar Pradesh        |
+| Piemonte             |
+| Okayama              |
+| Midi-Pyrnes          |
+| Markazi              |
+| Henan                |
+| Chisinau             |
+| Esprito Santo        |
+| Oriental             |
+| Yerevan              |
+| Nonthaburi           |
+| Tahiti               |
+| Lipetsk              |
+| Antofagasta          |
+| Moscow (City)        |
+| Cear                 |
+| Tatarstan            |
+| Mekka                |
+| Khartum              |
+| Galicia              |
+| Chiba                |
+| Moskova              |
+| Vaduz                |
+| Sarawak              |
+| Karnataka            |
+| Rajasthan            |
+| Basel-Stadt          |
+| Missouri             |
+| Nebraska             |
+| Sichuan              |
+| Cayenne              |
+| Skne ln              |
+| Hunan                |
+| Bchar                |
+| Eastern Visayas      |
+| National Capital Reg |
+| Chiayi               |
+| So Paulo             |
+| Changhwa             |
+| Pavlodar             |
+| Oyo & Osun           |
+| Mahajanga            |
+| Krim                 |
+| Gauteng              |
+| Puebla               |
+| Songkhla             |
+| Sucre                |
+| Cheju                |
+| Buenos Aires         |
+| Guangdong            |
+| Brunei and Muara     |
+| Gois                 |
+| Inner Mongolia       |
+| Caraga               |
+| Punjab               |
+| Georgia              |
+| Tete                 |
+| Abu Dhabi            |
+| Kyongsangbuk         |
+| Asir                 |
+| Ha Darom             |
+| Kwara & Kogi         |
+| Provence-Alpes-Cte   |
+| Funafuti             |
+| Ivanovo              |
+| Mxico                |
+| North West           |
+| Hubei                |
+| Distrito Federal     |
+| Nordrhein-Westfalen  |
+| Central Java         |
+| Gujarat              |
+| al-Qalyubiya         |
+| Risaralda            |
+| Lima                 |
+| Ktahya               |
+| Smolensk             |
+| Slaskie              |
+| Shandong             |
+| Taka-Karpatia        |
+| Free State           |
+| Coahuila de Zaragoza |
+| Maharashtra          |
+| Gelderland           |
+| Ynlin                |
+| Tennessee            |
+| Hiroshima            |
+| Scotland             |
+| Kilis                |
+| Minsk                |
+| Michigan             |
+| Saitama              |
+| Saint-Denis          |
+| Massachusetts        |
+| Michoacn de Ocampo   |
+| Assam                |
+| Jakarta Raya         |
+| Shanxi               |
+| Bern                 |
+| Ondo & Ekiti         |
+| Pyongyang-si         |
+| North Carolina       |
+| North Austria        |
+| Tel Aviv             |
+| Pays de la Loire     |
+| Gifu                 |
+| Adana                |
+| Xinxiang             |
+| Lilongwe             |
+| Gansu                |
+| Jiangxi              |
+| Perak                |
+| Batman               |
+| Steiermark           |
+| Miranda              |
+| Kerala               |
+| Skikda               |
+| Tamaulipas           |
+| Kirov                |
+| Noord-Brabant        |
+| Chaharmahal va Bakht |
+| Sumy                 |
+| Ontario              |
+| Tabora               |
+| Rostov-na-Donu       |
+| Nyanza               |
+| Tokyo-to             |
+| Baden-Wrttemberg     |
+| Jiangsu              |
+| Haiphong             |
+| Ahal                 |
+| Sulawesi Utara       |
+| Usak                 |
+| Alto Paran           |
+| Santa Catarina       |
+| Kitaa                |
+| Aden                 |
+| Jilin                |
+| Washington           |
+| Taizz                |
+| Haskovo              |
+| Kabol                |
+| Zanzibar West        |
+| Sisilia              |
+| Jaroslavl            |
+| Tamil Nadu           |
+| Asuncin              |
+| Saarland             |
+| Phnom Penh           |
+| Botosani             |
+| Qina                 |
+| Hawalli              |
+| Valle                |
+| Southern Tagalog     |
+| Chollanam            |
+| West Java            |
+| Fukushima            |
+| Hebei                |
+| Tucumn               |
+| Central Visayas      |
+| Kyonggi              |
+| Paran                |
+| Florida              |
+| Tianjin              |
+| Anhalt Sachsen       |
+| Miyazaki             |
+| Minas Gerais         |
+| Central Luzon        |
+| Sagaing              |
+| Sofala               |
+| Santiago             |
+| Cagayan Valley       |
+| Manab                |
+| Osaka                |
+| Severn Morava        |
+| Salzburg             |
+| Wielkopolskie        |
+| Guanajuato           |
+| Illinois             |
+| Bursa                |
+| East Azerbaidzan     |
+| Fujian               |
+| Ponce                |
+| Edo & Delta          |
+| Shiga                |
+| Kowloon and New Kowl |
+| Gurico               |
+| Virginia             |
+| Sharja               |
+| Baskimaa             |
+| Ohio                 |
+| Pietari              |
+| Pohjois-Pohjanmaa    |
+| Kaliningrad          |
+| Liaoning             |
+| Sanaa                |
+| Callao               |
+| Kedah                |
+| Rio de Janeiro       |
+| Lombardia            |
+| Kursk                |
+| Tabuk                |
+| Streymoyar           |
+| Kujawsko-Pomorskie   |
+| Tutuila              |
+| Central              |
+| Morelos              |
+| St George            |
+| Santa F              |
+| Baki                 |
+| Sumqayit             |
+| Sousse               |
+| Western Cape         |
+| Hanoi                |
+| Roraima              |
+| Baja California      |
+| Tongatapu            |
+| Adygea               |
+| Daugavpils           |
+| Tuvassia             |
+| Krasnojarsk          |
+| Nord-Ouest           |
+| Hidalgo              |
+| Shimane              |
+| Bratislava           |
+| Jharkhand            |
+| Arecibo              |
+| Centre               |
+| Par                  |
+| Jalisco              |
+| Okinawa              |
+| Balikesir            |
+| Andhra Pradesh       |
+| Chihuahua            |
+| East Java            |
+| Pernambuco           |
+| East Kasai           |
+| Kurgan               |
+| Kermanshah           |
+| New Hampshire        |
+| Namibe               |
+| Ibaragi              |
+| Hmelnytskyi          |
+| Shaba                |
+| Nakhon Sawan         |
+| Addis Abeba          |
+| Asturia              |
+| al-Qadarif           |
+| Rio Grande do Sul    |
+| Bretagne             |
+| St Thomas            |
+| Northern             |
+| Bauchi & Gombe       |
+| Utrecht              |
+| al-Sharqiya          |
+| Puerto Plata         |
+| Sawhaj               |
+| Oaxaca               |
+| Komi                 |
+| Nizni Novgorod       |
+| Chuquisaca           |
+| KwaZulu-Natal        |
+| Nampula              |
+| Northern Mindanao    |
+| British Colombia     |
+| La Romana            |
+| Copperbelt           |
+| Batna                |
+| Tartumaa             |
+| Baijeri              |
+| Kerman               |
+| Sinaloa              |
+| Zulia                |
+| La Paz               |
+| Ziguinchor           |
+| Caquet               |
+| Irkutsk              |
+| Nova Scotia          |
+| OHiggins             |
+| Hodeida              |
+| Nam Ha               |
+| Aceh                 |
+| Drenthe              |
+| Qubec                |
+| Gaziantep            |
+| Mwanza               |
+| Veracruz             |
+| Denizli              |
+| Ningxia              |
+| Stavropol            |
+| Baja California Sur  |
+| Boyac                |
+| al-Daqahliya         |
+| Istanbul             |
+| Chimborazo           |
+| Zufar                |
+| Apulia               |
+| Lubelskie            |
+| Nagano               |
+| Kalimantan Barat     |
+| Eskisehir            |
+| Volgograd            |
+| Heilongjiang         |
+| Coquimbo             |
+| Battambang           |
+| Sivas                |
+| Gumma                |
+| Khanh Hoa            |
+| Nghe An              |
+| Friuli-Venezia Giuli |
+| Mogiljov             |
+| Benguela             |
+| Mie                  |
+| Chari-Baguirmi       |
+| Kang-won             |
+| Colorado             |
+| Carabobo             |
+| Ruse                 |
+| Toscana              |
+| Sumatera Selatan     |
+| Tadla-Azilal         |
+| Hainan               |
+| Ishikawa             |
+| Zhejiang             |
+| Vojvodina            |
+| Vilna                |
+| Dolnoslaskie         |
+| Sokoto & Kebbi & Zam |
+| Bukarest             |
+| Huanuco              |
+| Tokat                |
+| Anzotegui            |
+| Mazowieckie          |
+| Qaraghandy           |
+| Kaohsiung            |
+| Campeche             |
+| Ninawa               |
+| Central Mindanao     |
+| Guerrero             |
+| Banjul               |
+| Loja                 |
+| al-Manama            |
+| Fejr                 |
+| West Greece          |
+| Piura                |
+| Vaud                 |
++----------------------+
+378 rows in set (0.01 sec)
+
+mysql> SELECT DISTINCT district FROM address WHERE district = "H%";
+Empty set (0.01 sec)
+
+mysql> SELECT DISTINCT district FROM address WHERE district LIKE "H%";
++--------------+
+| district     |
++--------------+
+| Hamilton     |
+| Haryana      |
+| Henan        |
+| Hunan        |
+| Ha Darom     |
+| Hubei        |
+| Hiroshima    |
+| Haiphong     |
+| Haskovo      |
+| Hawalli      |
+| Hebei        |
+| Hanoi        |
+| Hidalgo      |
+| Hmelnytskyi  |
+| Hodeida      |
+| Heilongjiang |
+| Hainan       |
+| Huanuco      |
++--------------+
+18 rows in set (0.00 sec)
+
+mysql> SELECT COUNT (*) FROM ADDRESS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) FROM ADDRESS' at line 1
+mysql> SELECT COUNT(*) FROM address;
++----------+
+| COUNT(*) |
++----------+
+|      603 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> SELECT COUNT(DISTINCT district) FROM address;
++--------------------------+
+| COUNT(DISTINCT district) |
++--------------------------+
+|                      378 |
++--------------------------+
+1 row in set (0.01 sec)
+
+mysql> DESC film;
++----------------------+---------------------------------------------------------------------+------+-----+-------------------+-----------------------------------------------+
+| Field                | Type
+  | Null | Key | Default           | Extra                                         |
++----------------------+---------------------------------------------------------------------+------+-----+-------------------+-----------------------------------------------+
+| film_id              | smallint unsigned
+  | NO   | PRI | NULL              | auto_increment                                |
+| title                | varchar(128)
+  | NO   | MUL | NULL              |                                               |
+| description          | text
+  | YES  |     | NULL              |                                               |
+| release_year         | year
+  | YES  |     | NULL              |                                               |
+| language_id          | tinyint unsigned
+  | NO   | MUL | NULL              |                                               |
+| original_language_id | tinyint unsigned
+  | YES  | MUL | NULL              |                                               |
+| rental_duration      | tinyint unsigned
+  | NO   |     | 3                 |                                               |
+| rental_rate          | decimal(4,2)
+  | NO   |     | 4.99              |                                               |
+| length               | smallint unsigned
+  | YES  |     | NULL              |                                               |
+| replacement_cost     | decimal(5,2)
+  | NO   |     | 19.99             |                                               |
+| rating               | enum('G','PG','PG-13','R','NC-17')
+  | YES  |     | G                 |                                               |
+| special_features     | set('Trailers','Commentaries','Deleted Scenes','Behind the Scenes') | YES  |     | NULL              |                                               |
+| last_update          | timestamp
+  | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++----------------------+---------------------------------------------------------------------+------+-----+-------------------+-----------------------------------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT MAX(rental_duration) FROM FILM;
++----------------------+
+| MAX(rental_duration) |
++----------------------+
+|                    7 |
++----------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT MIN(rental_duration) FROM FILM;
++----------------------+
+| MIN(rental_duration) |
++----------------------+
+|                    3 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(rental_duration) FROM FILM;
++----------------------+
+| AVG(rental_duration) |
++----------------------+
+|               4.9850 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(rental_duration) FROM FILM;
++----------------------+
+| SUM(rental_duration) |
++----------------------+
+|                 4985 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT address_id, address, district FORM address ORDER BY district;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'address ORDER BY district'at line 1
+mysql> SELECT address, district FORM address ORDER BY district;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'address ORDER BY district'at line 1
+mysql> SELECT address_id, address, district FROM address ORDER BY district;
++------------+----------------------------------------+----------------------+
+| address_id | address                                | district             |
++------------+----------------------------------------+----------------------+
+|        519 | 962 Tama Loop                          |                      |
+|         30 | 18 Duisburg Boulevard                  |                      |
+|        386 | 1368 Maracabo Boulevard                |                      |
+|        457 | 535 Ahmadnagar Manor                   | Abu Dhabi            |
+|        102 | 669 Firozabad Loop                     | Abu Dhabi            |
+|        478 | 1078 Stara Zagora Drive                | Aceh                 |
+|        168 | 842 Salzburg Lane                      | Adana                |
+|        332 | 663 Baha Blanca Parkway                | Adana                |
+|        397 | 614 Pak Kret Street                    | Addis Abeba          |
+|        214 | 751 Lima Loop                          | Aden                 |
+|        351 | 1157 Nyeri Loop                        | Adygea               |
+|        204 | 387 Mwene-Ditu Drive                   | Ahal                 |
+|        496 | 775 ostka Drive                        | al-Daqahliya         |
+|        596 | 1759 Niznekamsk Avenue                 | al-Manama            |
+|        400 | 1152 Citrus Heights Manor              | al-Qadarif           |
+|        123 | 1987 Coacalco de Berriozbal Loop       | al-Qalyubiya         |
+|        138 | 765 Southampton Drive                  | al-Qalyubiya         |
+|        422 | 289 Santo Andr Manor                   | al-Sharqiya          |
+|        565 | 1741 Hoshiarpur Boulevard              | al-Sharqiya          |
+|          3 | 23 Workhaven Lane                      | Alberta              |
+|          1 | 47 MySakila Drive                      | Alberta              |
+|        209 | 1679 Antofagasta Street                | Alto Paran           |
+|        535 | 635 Brest Manor                        | Andhra Pradesh       |
+|        372 | 230 Urawa Drive                        | Andhra Pradesh       |
+|        513 | 758 Korolev Parkway                    | Andhra Pradesh       |
+|        255 | 1966 Tonghae Street                    | Anhalt Sachsen       |
+|         49 | 1718 Valencia Street                   | Antofagasta          |
+|        574 | 502 Mandi Bahauddin Parkway            | Anzotegui            |
+|        504 | 1 Valle de Santiago Avenue             | Apulia               |
+|        365 | 1009 Zanzibar Lane                     | Arecibo              |
+|        105 | 733 Mandaluyong Place                  | Asir                 |
+|        156 | 1963 Moscow Place                      | Assam                |
+|        399 | 331 Bydgoszcz Parkway                  | Asturia              |
+|        230 | 201 Effon-Alaiye Way                   | Asuncin              |
+|          7 | 692 Joliet Street                      | Attika               |
+|        200 | 1074 Binzhou Manor                     | Baden-Wrttemberg     |
+|        453 | 319 Springs Loop                       | Baijeri              |
+|        348 | 785 Vaduz Street                       | Baja California      |
+|        493 | 184 Mandaluyong Street                 | Baja California Sur  |
+|        338 | 431 Szkesfehrvr Avenue                 | Baki                 |
+|        371 | 1912 Emeishan Drive                    | Balikesir            |
+|        590 | 247 Jining Parkway                     | Banjul               |
+|         65 | 915 Ponce Place                        | Basel-Stadt          |
+|        298 | 44 Najafabad Way                       | Baskimaa             |
+|        176 | 29 Pyongyang Loop                      | Batman               |
+|        446 | 1924 Shimonoseki Drive                 | Batna                |
+|        522 | 1768 Udine Loop                        | Battambang           |
+|        414 | 1936 Lapu-Lapu Parkway                 | Bauchi & Gombe       |
+|         73 | 1031 Daugavpils Parkway                | Bchar                |
+|        534 | 486 Ondo Parkway                       | Benguela             |
+|        159 | 185 Novi Sad Place                     | Bern                 |
+|        424 | 1948 Bayugan Parkway                   | Bihar                |
+|         32 | 1425 Shikarpur Manor                   | Bihar                |
+|        514 | 1747 Rustenburg Place                  | Bihar                |
+|        234 | 1256 Bislig Boulevard                  | Botosani             |
+|        495 | 656 Matamoros Drive                    | Boyac                |
+|        362 | 482 Kowloon and New Kowloon Manor      | Bratislava           |
+|        407 | 1346 Mysore Drive                      | Bretagne             |
+|        441 | 983 Santa F Way                        | British Colombia     |
+|         95 | 1370 Le Mans Avenue                    | Brunei and Muara     |
+|        566 | 1229 Varanasi (Benares) Manor          | Buenos Aires         |
+|        327 | 1427 A Corua (La Corua) Place          | Buenos Aires         |
+|        364 | 1623 Kingstown Drive                   | Buenos Aires         |
+|        223 | 1244 Allappuzha (Alleppey) Place       | Buenos Aires         |
+|        410 | 88 Nagaon Manor                        | Buenos Aires         |
+|         93 | 1926 El Alto Avenue                    | Buenos Aires         |
+|        111 | 1532 Dzerzinsk Way                     | Buenos Aires         |
+|        450 | 203 Tambaram Street                    | Buenos Aires         |
+|        591 | 773 Dallas Manor                       | Buenos Aires         |
+|        536 | 166 Jinchang Street                    | Buenos Aires         |
+|        569 | 1342 Abha Boulevard                    | Bukarest             |
+|        283 | 457 Tongliao Loop                      | Bursa                |
+|        266 | 862 Xintai Lane                        | Cagayan Valley       |
+|        274 | 920 Kumbakonam Loop                    | California           |
+|          6 | 1121 Loja Avenue                       | California           |
+|        218 | 226 Brest Manor                        | California           |
+|        116 | 793 Cam Ranh Avenue                    | California           |
+|         55 | 1135 Izumisano Parkway                 | California           |
+|        599 | 1895 Zhezqazghan Drive                 | California           |
+|        186 | 533 al-Ayn Boulevard                   | California           |
+|        425 | 1866 al-Qatif Avenue                   | California           |
+|         18 | 770 Bydgoszcz Avenue                   | California           |
+|        309 | 827 Yuncheng Drive                     | Callao               |
+|        584 | 1819 Alessandria Loop                  | Campeche             |
+|        465 | 734 Tanshui Avenue                     | Caquet               |
+|        545 | 163 Augusta-Richmond County Loop       | Carabobo             |
+|         98 | 152 Kitwe Parkway                      | Caraga               |
+|        192 | 1166 Changhwa Street                   | Caraga               |
+|         69 | 698 Otsu Street                        | Cayenne              |
+|         51 | 686 Garland Manor                      | Cear                 |
+|        326 | 470 Boksburg Street                    | Central              |
+|        368 | 1658 Jastrzebie-Zdrj Loop              | Central              |
+|        350 | 1628 Nagareyama Lane                   | Central              |
+|        455 | 1947 Paarl Way                         | Central Java         |
+|        120 | 544 Malm Parkway                       | Central Java         |
+|        463 | 935 Aden Boulevard                     | Central Java         |
+|        510 | 48 Maracabo Place                      | Central Luzon        |
+|        554 | 947 Trshavn Place                      | Central Luzon        |
+|        260 | 127 Iwakuni Boulevard                  | Central Luzon        |
+|        586 | 951 Springs Lane                       | Central Mindanao     |
+|         11 | 900 Santiago de Compostela Parkway     | Central Serbia       |
+|        248 | 582 Papeete Loop                       | Central Visayas      |
+|        366 | 114 Jalib al-Shuyukh Manor             | Centre               |
+|        189 | 927 Barcelona Street                   | Chaharmahal va Bakht |
+|         79 | 1551 Rampur Lane                       | Changhwa             |
+|        541 | 195 Ilorin Street                      | Chari-Baguirmi       |
+|         92 | 1942 Ciparay Parkway                   | Cheju                |
+|         77 | 1947 Poos de Caldas Boulevard          | Chiayi               |
+|         57 | 17 Kabul Boulevard                     | Chiba                |
+|        472 | 1447 Chatsworth Place                  | Chihuahua            |
+|        374 | 433 Florencia Street                   | Chihuahua            |
+|        499 | 1954 Kowloon and New Kowloon Way       | Chimborazo           |
+|         42 | 269 Cam Ranh Parkway                   | Chisinau             |
+|        241 | 647 A Corua (La Corua) Street          | Chollanam            |
+|        436 | 287 Cuautla Boulevard                  | Chuquisaca           |
+|        576 | 1351 Sousse Lane                       | Coahuila de Zaragoza |
+|        137 | 261 Saint Louis Way                    | Coahuila de Zaragoza |
+|        491 | 1789 Saint-Denis Parkway               | Coahuila de Zaragoza |
+|        543 | 43 Vilnius Manor                       | Colorado             |
+|        443 | 1836 Korla Parkway                     | Copperbelt           |
+|        521 | 568 Dhule (Dhulia) Loop                | Coquimbo             |
+|         28 | 96 Tafuna Way                          | Crdoba               |
+|        352 | 1673 Tangail Drive                     | Daugavpils           |
+|        488 | 698 Jelets Boulevard                   | Denizli              |
+|        337 | 1838 Tabriz Lane                       | Dhaka                |
+|         25 | 262 A Corua (La Corua) Parkway         | Dhaka                |
+|        334 | 1816 Bydgoszcz Loop                    | Dhaka                |
+|        330 | 981 Kumbakonam Place                   | Distrito Federal     |
+|        115 | 1378 Alvorada Avenue                   | Distrito Federal     |
+|        564 | 505 Madiun Boulevard                   | Dolnoslaskie         |
+|        479 | 1854 Okara Boulevard                   | Drenthe              |
+|        284 | 600 Bradford Street                    | East Azerbaidzan     |
+|        377 | 154 Oshawa Manor                       | East Java            |
+|        505 | 519 Brescia Parkway                    | East Java            |
+|        380 | 1519 Santiago de los Caballeros Loop   | East Kasai           |
+|         75 | 492 Cam Ranh Street                    | Eastern Visayas      |
+|        289 | 1279 Udine Parkway                     | Edo & Delta          |
+|        256 | 1497 Yuzhou Drive                      | England              |
+|        589 | 1584 Ljubertsy Lane                    | England              |
+|        482 | 808 Naala-Porto Parkway                | England              |
+|        562 | 869 Shikarpur Way                      | England              |
+|         20 | 360 Toulouse Parkway                   | England              |
+|        502 | 1515 Korla Way                         | England              |
+|         89 | 1557 Ktahya Boulevard                  | England              |
+|         14 | 1531 Sal Drive                         | Esfahan              |
+|        373 | 1922 Miraj Way                         | Esfahan              |
+|        464 | 76 Kermanshah Manor                    | Esfahan              |
+|        512 | 1269 Ipoh Avenue                       | Eskisehir            |
+|         43 | 306 Antofagasta Place                  | Esprito Santo        |
+|        598 | 42 Fontana Avenue                      | Fejr                 |
+|        252 | 1309 Weifang Street                    | Florida              |
+|        532 | 1427 Tabuk Place                       | Florida              |
+|        136 | 898 Belm Manor                         | Free State           |
+|        531 | 1986 Sivas Place                       | Friuli-Venezia Giuli |
+|        286 | 1308 Sumy Loop                         | Fujian               |
+|        244 | 1148 Saarbrcken Parkway                | Fukushima            |
+|        406 | 454 Patiala Lane                       | Fukushima            |
+|        109 | 454 Nakhon Sawan Boulevard             | Funafuti             |
+|        555 | 1764 Jalib al-Shuyukh Parkway          | Galicia              |
+|         56 | 939 Probolinggo Loop                   | Galicia              |
+|        474 | 1469 Plock Lane                        | Galicia              |
+|        172 | 475 Atinsk Way                         | Gansu                |
+|        500 | 362 Rajkot Lane                        | Gansu                |
+|         87 | 929 Tallahassee Loop                   | Gauteng              |
+|        129 | 569 Baicheng Lane                      | Gauteng              |
+|        476 | 270 Tambaram Parkway                   | Gauteng              |
+|        149 | 999 Sanaa Loop                         | Gauteng              |
+|        485 | 984 Novoterkassk Loop                  | Gaziantep            |
+|        346 | 1217 Konotop Avenue                    | Gelderland           |
+|        141 | 1749 Daxian Place                      | Gelderland           |
+|        100 | 1308 Arecibo Way                       | Georgia              |
+|        167 | 1287 Xiangfan Boulevard                | Gifu                 |
+|         96 | 984 Effon-Alaiye Avenue                | Gois                 |
+|        233 | 356 Olomouc Manor                      | Gois                 |
+|        134 | 758 Junan Lane                         | Gois                 |
+|        187 | 1839 Szkesfehrvr Parkway               | Gois                 |
+|        220 | 1201 Qomsheh Manor                     | Gois                 |
+|        419 | 397 Sunnyvale Avenue                   | Guanajuato           |
+|        293 | 86 Higashiosaka Lane                   | Guanajuato           |
+|        593 | 1402 Zanzibar Boulevard                | Guanajuato           |
+|        278 | 144 South Hill Loop                    | Guanajuato           |
+|        429 | 1269 Botosani Manor                    | Guangdong            |
+|        490 | 1909 Dayton Avenue                     | Guangdong            |
+|         94 | 1952 Chatsworth Drive                  | Guangdong            |
+|        383 | 686 Donostia-San Sebastin Lane         | Guangdong            |
+|        587 | 760 Miyakonojo Drive                   | Guerrero             |
+|        121 | 1967 Sincelejo Place                   | Gujarat              |
+|        560 | 1447 Imus Place                        | Gujarat              |
+|        384 | 97 Mogiljov Lane                       | Gujarat              |
+|        525 | 1949 Sanya Street                      | Gumma                |
+|        295 | 544 Tarsus Boulevard                   | Gurico               |
+|        483 | 632 Usolje-Sibirskoje Parkway          | Ha Darom             |
+|        106 | 659 Vaduz Drive                        | Ha Darom             |
+|        552 | 390 Wroclaw Way                        | Hainan               |
+|        203 | 1149 A Corua (La Corua) Boulevard      | Haiphong             |
+|         12 | 478 Joliet Way                         | Hamilton             |
+|        345 | 68 Ponce Parkway                       | Hanoi                |
+|         16 | 808 Bhopal Manor                       | Haryana              |
+|        279 | 1884 Shikarpur Avenue                  | Haryana              |
+|        219 | 1229 Valencia Parkway                  | Haskovo              |
+|        238 | 346 Skikda Parkway                     | Hawalli              |
+|        246 | 1246 Boksburg Parkway                  | Hebei                |
+|        605 | 1325 Fukuyama Street                   | Heilongjiang         |
+|        516 | 1574 Goinia Boulevard                  | Heilongjiang         |
+|         41 | 1440 Fukuyama Loop                     | Henan                |
+|        329 | 867 Benin City Avenue                  | Henan                |
+|        344 | 1909 Benguela Lane                     | Henan                |
+|        358 | 1698 Southport Loop                    | Hidalgo              |
+|        588 | 966 Asuncin Way                        | Hidalgo              |
+|        342 | 124 al-Manama Way                      | Hiroshima            |
+|        304 | 1635 Kuwana Boulevard                  | Hiroshima            |
+|        145 | 928 Jaffna Loop                        | Hiroshima            |
+|        391 | 1793 Meixian Place                     | Hmelnytskyi          |
+|        475 | 434 Ourense (Orense) Manor             | Hodeida              |
+|        571 | 1746 Faaa Way                          | Huanuco              |
+|        245 | 1103 Bilbays Parkway                   | Hubei                |
+|        520 | 1778 Gijn Manor                        | Hubei                |
+|        318 | 1774 Yaound Place                      | Hubei                |
+|        114 | 804 Elista Drive                       | Hubei                |
+|        427 | 1557 Cape Coral Parkway                | Hubei                |
+|        272 | 1762 Paarl Parkway                     | Hunan                |
+|         71 | 1586 Guaruj Place                      | Hunan                |
+|        390 | 102 Chapra Drive                       | Ibaragi              |
+|        509 | 786 Matsue Way                         | Illinois             |
+|        462 | 1485 Bratislava Place                  | Illinois             |
+|        280 | 1980 Kamjanets-Podilskyi Street        | Illinois             |
+|        335 | 587 Benguela Manor                     | Illinois             |
+|         97 | 832 Nakhon Sawan Manor                 | Inner Mongolia       |
+|        142 | 1587 Sullana Lane                      | Inner Mongolia       |
+|        447 | 105 Dzerzinsk Manor                    | Inner Mongolia       |
+|        600 | 1837 Kaduna Parkway                    | Inner Mongolia       |
+|        467 | 1621 Tongliao Avenue                   | Irkutsk              |
+|        553 | 1421 Quilmes Lane                      | Ishikawa             |
+|        498 | 319 Plock Parkway                      | Istanbul             |
+|        110 | 1867 San Juan Bautista Tuxtepec Avenue | Ivanovo              |
+|        157 | 456 Escobar Way                        | Jakarta Raya         |
+|        369 | 817 Laredo Avenue                      | Jalisco              |
+|        470 | 1088 Ibirit Place                      | Jalisco              |
+|        226 | 810 Palghat (Palakkad) Boulevard       | Jaroslavl            |
+|        363 | 604 Bern Place                         | Jharkhand            |
+|        431 | 1596 Acua Parkway                      | Jharkhand            |
+|        389 | 500 Lincoln Parkway                    | Jiangsu              |
+|        201 | 817 Bradford Loop                      | Jiangsu              |
+|        173 | 1294 Firozabad Drive                   | Jiangxi              |
+|        544 | 183 Haiphong Street                    | Jilin                |
+|        215 | 1333 Haldia Street                     | Jilin                |
+|        222 | 1168 Najafabad Parkway                 | Kabol                |
+|         22 | 320 Brest Avenue                       | Kaduna               |
+|        236 | 885 Yingkou Manor                      | Kaduna               |
+|        511 | 1152 al-Qatif Lane                     | Kalimantan Barat     |
+|        306 | 1883 Maikop Lane                       | Kaliningrad          |
+|         21 | 270 Toulon Boulevard                   | Kalmykia             |
+|         83 | 586 Tete Way                           | Kanagawa             |
+|         15 | 1542 Tarlac Parkway                    | Kanagawa             |
+|        542 | 193 Bhusawal Place                     | Kang-won             |
+|        582 | 1568 Celaya Parkway                    | Kaohsiung            |
+|        140 | 788 Atinsk Street                      | Karnataka            |
+|        242 | 1964 Gijn Manor                        | Karnataka            |
+|         63 | 1213 Ranchi Parkway                    | Karnataka            |
+|        473 | 1257 Guadalajara Street                | Karnataka            |
+|        375 | 1049 Matamoros Parkway                 | Karnataka            |
+|        311 | 715 So Bernardo do Campo Lane          | Kedah                |
+|        179 | 431 Xiangtan Avenue                    | Kerala               |
+|        273 | 1519 Ilorin Place                      | Kerala               |
+|        454 | 956 Nam Dinh Manor                     | Kerman               |
+|        382 | 220 Hidalgo Drive                      | Kermanshah           |
+|        538 | 1817 Livorno Way                       | Khanh Hoa            |
+|        526 | 617 Klerksdorp Place                   | Khanh Hoa            |
+|         54 | 115 Hidalgo Parkway                    | Khartum              |
+|        147 | 374 Bat Yam Boulevard                  | Kilis                |
+|        183 | 1089 Iwatsuki Avenue                   | Kirov                |
+|        211 | 850 Salala Loop                        | Kitaa                |
+|        433 | 1823 Hoshiarpur Lane                   | Komi                 |
+|        294 | 1912 Allende Manor                     | Kowloon and New Kowl |
+|        356 | 1378 Beira Loop                        | Krasnojarsk          |
+|        402 | 616 Hagonoy Avenue                     | Krasnojarsk          |
+|         86 | 927 Baha Blanca Parkway                | Krim                 |
+|        128 | 848 Tafuna Manor                       | Ktahya               |
+|        323 | 1769 Iwaki Lane                        | Kujawsko-Pomorskie   |
+|        381 | 1618 Olomouc Manor                     | Kurgan               |
+|        316 | 746 Joliet Lane                        | Kursk                |
+|        107 | 1177 Jelets Way                        | Kwara & Kogi         |
+|        437 | 1766 Almirante Brown Street            | KwaZulu-Natal        |
+|        561 | 1497 Fengshan Drive                    | KwaZulu-Natal        |
+|        249 | 300 Junan Street                       | Kyonggi              |
+|        103 | 588 Vila Velha Manor                   | Kyongsangbuk         |
+|        460 | 659 Gatineau Boulevard                 | La Paz               |
+|        442 | 1245 Ibirit Way                        | La Romana            |
+|        307 | 1908 Gaziantep Place                   | Liaoning             |
+|        527 | 1993 0 Loop                            | Liaoning             |
+|        601 | 844 Bucuresti Place                    | Liaoning             |
+|         27 | 1780 Hino Boulevard                    | Liepaja              |
+|        170 | 710 San Felipe del Progreso Avenue     | Lilongwe             |
+|        126 | 1175 Tanauan Way                       | Lima                 |
+|         48 | 1998 Halifax Drive                     | Lipetsk              |
+|        104 | 1913 Kamakura Place                    | Lipetsk              |
+|        595 | 1074 Sanaa Parkway                     | Loja                 |
+|        444 | 231 Kaliningrad Place                  | Lombardia            |
+|        314 | 1224 Huejutla de Reyes Boulevard       | Lombardia            |
+|        506 | 414 Mandaluyong Street                 | Lubelskie            |
+|        361 | 45 Aparecida de Goinia Place           | Madhya Pradesh       |
+|         72 | 57 Arlington Manor                     | Madhya Pradesh       |
+|         19 | 419 Iligan Lane                        | Madhya Pradesh       |
+|         85 | 320 Baiyin Parkway                     | Mahajanga            |
+|        445 | 495 Bhimavaram Lane                    | Maharashtra          |
+|        139 | 943 Johannesburg Avenue                | Maharashtra          |
+|        321 | 651 Pathankot Loop                     | Maharashtra          |
+|        302 | 922 Vila Velha Loop                    | Maharashtra          |
+|        305 | 41 El Alto Parkway                     | Maharashtra          |
+|        171 | 1540 Wroclaw Drive                     | Maharashtra          |
+|        206 | 642 Nador Drive                        | Maharashtra          |
+|        267 | 816 Cayenne Parkway                    | Manab                |
+|          8 | 1566 Inegl Manor                       | Mandalay             |
+|         40 | 334 Munger (Monghyr) Lane              | Markazi              |
+|         13 | 613 Korolev Drive                      | Masqat               |
+|        153 | 782 Mosul Street                       | Massachusetts        |
+|        577 | 1501 Pangkal Pinang Avenue             | Mazowieckie          |
+|         74 | 1124 Buenaventura Drive                | Mekka                |
+|         53 | 725 Isesaki Place                      | Mekka                |
+|        150 | 879 Newcastle Way                      | Michigan             |
+|        281 | 1944 Bamenda Way                       | Michigan             |
+|        154 | 781 Shimonoseki Drive                  | Michoacn de Ocampo   |
+|        459 | 251 Florencia Drive                    | Michoacn de Ocampo   |
+|         39 | 391 Callao Drive                       | Midi-Pyrnes          |
+|        537 | 958 Sagamihara Lane                    | Mie                  |
+|        259 | 1338 Zalantun Lane                     | Minas Gerais         |
+|        315 | 543 Bergamo Avenue                     | Minas Gerais         |
+|        597 | 32 Liaocheng Way                       | Minas Gerais         |
+|        148 | 1027 Songkhla Manor                    | Minsk                |
+|        178 | 1848 Salala Boulevard                  | Miranda              |
+|         66 | 1717 Guadalajara Lane                  | Missouri             |
+|        313 | 1191 Sungai Petani Boulevard           | Missouri             |
+|        258 | 752 Ondo Loop                          | Miyazaki             |
+|        533 | 556 Asuncin Way                        | Mogiljov             |
+|        581 | 186 Skikda Lane                        | Morelos              |
+|        328 | 479 San Felipe del Progreso Avenue     | Morelos              |
+|         50 | 46 Pjatigorsk Lane                     | Moscow (City)        |
+|        164 | 1623 Baha Blanca Manor                 | Moskova              |
+|        398 | 954 Lapu-Lapu Way                      | Moskova              |
+|         59 | 1697 Kowloon and New Kowloon Loop      | Moskova              |
+|        573 | 1407 Surakarta Manor                   | Moskova              |
+|        486 | 64 Korla Street                        | Mwanza               |
+|        112 | 1002 Ahmadnagar Manor                  | Mxico                |
+|        119 | 1107 Nakhon Sawan Avenue               | Mxico                |
+|        324 | 1145 Vilnius Manor                     | Mxico                |
+|        251 | 1473 Changhwa Parkway                  | Mxico                |
+|        508 | 496 Celaya Drive                       | Nagano               |
+|          5 | 1913 Hanoi Way                         | Nagasaki             |
+|        395 | 1337 Mit Ghamr Avenue                  | Nakhon Sawan         |
+|        477 | 1786 Salinas Place                     | Nam Ha               |
+|        388 | 368 Hunuco Boulevard                   | Namibe               |
+|        438 | 596 Huixquilucan Place                 | Nampula              |
+|        592 | 1923 Stara Zagora Lane                 | Nantou               |
+|          9 | 53 Idfu Parkway                        | Nantou               |
+|        268 | 1831 Nam Dinh Loop                     | National Capital Reg |
+|         76 | 89 Allappuzha (Alleppey) Manor         | National Capital Reg |
+|         67 | 1214 Hanoi Way                         | Nebraska             |
+|        387 | 401 Sucre Boulevard                    | New Hampshire        |
+|        529 | 600 Purnea (Purnia) Avenue             | Nghe An              |
+|        585 | 1208 Tama Loop                         | Ninawa               |
+|        489 | 1297 Alvorada Parkway                  | Ningxia              |
+|        435 | 740 Udaipur Lane                       | Nizni Novgorod       |
+|         46 | 1632 Bislig Avenue                     | Nonthaburi           |
+|        188 | 741 Ambattur Manor                     | Noord-Brabant        |
+|        357 | 1641 Changhwa Place                    | Nord-Ouest           |
+|        118 | 442 Rae Bareli Place                   | Nordrhein-Westfalen  |
+|        205 | 68 Molodetno Manor                     | Nordrhein-Westfalen  |
+|        199 | 1792 Valle de la Pascua Place          | Nordrhein-Westfalen  |
+|        163 | 1440 Compton Place                     | North Austria        |
+|        162 | 369 Papeete Way                        | North Carolina       |
+|        113 | 682 Junan Way                          | North West           |
+|        412 | 1639 Saarbrcken Drive                  | North West           |
+|        413 | 692 Amroha Drive                       | Northern             |
+|         23 | 1417 Lancaster Avenue                  | Northern Cape        |
+|        466 | 118 Jaffna Loop                        | Northern Mindanao    |
+|        439 | 1351 Aparecida de Goinia Parkway       | Northern Mindanao    |
+|         24 | 1688 Okara Way                         | Nothwest Border Prov |
+|        468 | 1844 Usak Avenue                       | Nova Scotia          |
+|        197 | 447 Surakarta Loop                     | Nyanza               |
+|        430 | 355 Vitria de Santo Anto Way           | Oaxaca               |
+|        469 | 1872 Toulon Loop                       | OHiggins             |
+|        484 | 98 Pyongyang Boulevard                 | Ohio                 |
+|        299 | 32 Pudukkottai Lane                    | Ohio                 |
+|        434 | 1404 Taguig Drive                      | Okayama              |
+|        494 | 591 Sungai Petani Drive                | Okayama              |
+|         38 | 61 Tama Street                         | Okayama              |
+|        370 | 1565 Tangail Manor                     | Okinawa              |
+|        202 | 955 Bamenda Way                        | Ondo & Ekiti         |
+|        160 | 1367 Yantai Manor                      | Ondo & Ekiti         |
+|        285 | 1006 Santa Brbara dOeste Manor         | Ondo & Ekiti         |
+|        193 | 891 Novi Sad Manor                     | Ontario              |
+|        415 | 432 Garden Grove Street                | Ontario              |
+|        517 | 548 Uruapan Street                     | Ontario              |
+|         44 | 671 Graz Street                        | Oriental             |
+|        396 | 767 Pyongyang Drive                    | Osaka                |
+|        269 | 446 Kirovo-Tepetsk Lane                | Osaka                |
+|         17 | 270 Amroha Parkway                     | Osmaniye             |
+|        254 | 786 Stara Zagora Way                   | Oyo & Osun           |
+|        291 | 1155 Liaocheng Place                   | Oyo & Osun           |
+|        282 | 556 Baybay Manor                       | Oyo & Osun           |
+|         84 | 1888 Kabul Drive                       | Oyo & Osun           |
+|        367 | 1163 London Parkway                    | Par                  |
+|        250 | 829 Grand Prairie Way                  | Paran                |
+|         80 | 602 Paarl Street                       | Pavlodar             |
+|        166 | 1740 Le Mans Loop                      | Pays de la Loire     |
+|        175 | 316 Uruapan Street                     | Perak                |
+|        379 | 1133 Rizhao Avenue                     | Pernambuco           |
+|        232 | 754 Valencia Place                     | Phnom Penh           |
+|         37 | 127 Purnea (Purnia) Manor              | Piemonte             |
+|        300 | 661 Chisinau Lane                      | Pietari              |
+|        603 | 1103 Quilmes Boulevard                 | Piura                |
+|        303 | 898 Jining Lane                        | Pohjois-Pohjanmaa    |
+|        287 | 1405 Chisinau Place                    | Ponce                |
+|        108 | 1386 Yangor Avenue                     | Provence-Alpes-Cte   |
+|         88 | 125 Citt del Vaticano Boulevard        | Puebla               |
+|        423 | 437 Chungho Drive                      | Puerto Plata         |
+|        417 | 791 Salinas Street                     | Punjab               |
+|        301 | 951 Stara Zagora Manor                 | Punjab               |
+|         99 | 1697 Tanauan Lane                      | Punjab               |
+|        227 | 1820 Maring Parkway                    | Punjab               |
+|        404 | 734 Bchar Place                        | Punjab               |
+|        161 | 1386 Nakhon Sawan Boulevard            | Pyongyang-si         |
+|        579 | 521 San Juan Bautista Tuxtepec Place   | Qaraghandy           |
+|        237 | 1736 Cavite Place                      | Qina                 |
+|          2 | 28 MySQL Boulevard                     | QLD                  |
+|          4 | 1411 Lillydale Drive                   | QLD                  |
+|        481 | 1153 Allende Way                       | Qubec                |
+|         26 | 28 Charlotte Amalie Street             | Rabat-Sal-Zammour-Z  |
+|        174 | 1877 Ezhou Lane                        | Rajasthan            |
+|        228 | 60 Poos de Caldas Street               | Rajasthan            |
+|        213 | 43 Dadu Avenue                         | Rajasthan            |
+|         64 | 81 Hodeida Way                         | Rajasthan            |
+|        312 | 1354 Siegen Street                     | Rio de Janeiro       |
+|        557 | 1407 Pachuca de Soto Place             | Rio Grande do Sul    |
+|        448 | 614 Denizli Parkway                    | Rio Grande do Sul    |
+|        403 | 1190 0 Place                           | Rio Grande do Sul    |
+|        184 | 1410 Benin City Parkway                | Risaralda            |
+|        124 | 241 Mosul Lane                         | Risaralda            |
+|        347 | 1293 Nam Dinh Way                      | Roraima              |
+|        195 | 1077 San Felipe de Puerto Plata Place  | Rostov-na-Donu       |
+|        546 | 191 Jos Azueta Parkway                 | Ruse                 |
+|        231 | 430 Alessandria Loop                   | Saarland             |
+|        261 | 51 Laredo Avenue                       | Sagaing              |
+|        152 | 1952 Pune Lane                         | Saint-Denis          |
+|        409 | 1266 Laredo Parkway                    | Saitama              |
+|        151 | 1337 Lincoln Parkway                   | Saitama              |
+|        401 | 168 Cianjur Manor                      | Saitama              |
+|        271 | 1587 Loja Manor                        | Salzburg             |
+|        308 | 687 Alessandria Parkway                | Sanaa                |
+|        210 | 1304 s-Hertogenbosch Way               | Santa Catarina       |
+|        336 | 430 Kumbakonam Drive                   | Santa F              |
+|        263 | 532 Toulon Street                      | Santiago             |
+|         62 | 1114 Liepaja Street                    | Sarawak              |
+|        428 | 1727 Matamoros Place                   | Sawhaj               |
+|        146 | 483 Ljubertsy Parkway                  | Scotland             |
+|        270 | 682 Halisahar Place                    | Severn Morava        |
+|        392 | 514 Ife Way                            | Shaba                |
+|        277 | 85 San Felipe de Puerto Plata Drive    | Shandong             |
+|        594 | 1464 Kursk Parkway                     | Shandong             |
+|        539 | 1332 Gaziantep Lane                    | Shandong             |
+|        501 | 1060 Tandil Lane                       | Shandong             |
+|        570 | 415 Pune Avenue                        | Shandong             |
+|        155 | 1560 Jelets Boulevard                  | Shandong             |
+|        133 | 1854 Tieli Street                      | Shandong             |
+|        440 | 722 Bradford Lane                      | Shandong             |
+|        471 | 1322 Mosul Parkway                     | Shandong             |
+|        158 | 798 Cianjur Avenue                     | Shanxi               |
+|        265 | 1158 Mandi Bahauddin Parkway           | Shanxi               |
+|        297 | 1192 Tongliao Street                   | Sharja               |
+|        290 | 1336 Benin City Drive                  | Shiga                |
+|        360 | 619 Hunuco Avenue                      | Shimane              |
+|        394 | 753 Ilorin Avenue                      | Sichuan              |
+|         68 | 1966 Amroha Avenue                     | Sichuan              |
+|        575 | 1052 Pathankot Avenue                  | Sichuan              |
+|        456 | 814 Simferopol Loop                    | Sinaloa              |
+|         29 | 934 San Felipe de Puerto Plata Street  | Sind                 |
+|        421 | 966 Arecibo Loop                       | Sind                 |
+|        225 | 1926 Gingoog Street                    | Sisilia              |
+|        524 | 680 A Corua (La Corua) Manor           | Sivas                |
+|        180 | 757 Rustenburg Avenue                  | Skikda               |
+|         70 | 1150 Kimchon Manor                     | Skne ln              |
+|        578 | 1405 Hagonoy Avenue                    | Slaskie              |
+|        385 | 1642 Charlotte Amalie Drive            | Slaskie              |
+|        132 | 1050 Garden Grove Avenue               | Slaskie              |
+|        131 | 801 Hagonoy Drive                      | Smolensk             |
+|        182 | 1891 Rizhao Boulevard                  | So Paulo             |
+|         78 | 1206 Dos Quebradas Place               | So Paulo             |
+|        550 | 1715 Okayama Street                    | So Paulo             |
+|         81 | 1692 Ede Loop                          | So Paulo             |
+|        130 | 1666 Qomsheh Drive                     | So Paulo             |
+|        359 | 519 Nyeri Manor                        | So Paulo             |
+|        319 | 1957 Yantai Lane                       | So Paulo             |
+|        432 | 259 Ipoh Drive                         | So Paulo             |
+|        262 | 771 Yaound Manor                       | Sofala               |
+|        568 | 1342 Sharja Way                        | Sokoto & Kebbi & Zam |
+|         90 | 870 Ashqelon Loop                      | Songkhla             |
+|        340 | 507 Smolensk Loop                      | Sousse               |
+|         31 | 217 Botshabelo Place                   | Southern Mindanao    |
+|        354 | 953 Hodeida Street                     | Southern Tagalog     |
+|        240 | 1479 Rustenburg Boulevard              | Southern Tagalog     |
+|        376 | 1061 Ede Avenue                        | Southern Tagalog     |
+|        378 | 1191 Tandil Drive                      | Southern Tagalog     |
+|        528 | 1176 Southend-on-Sea Manor             | Southern Tagalog     |
+|        393 | 717 Changzhou Lane                     | Southern Tagalog     |
+|        331 | 1016 Iwakuni Street                    | St George            |
+|        411 | 264 Bhimavaram Manor                   | St Thomas            |
+|        492 | 185 Mannheim Lane                      | Stavropol            |
+|        177 | 1010 Klerksdorp Way                    | Steiermark           |
+|        322 | 1359 Zhoushan Parkway                  | Streymoyar           |
+|         91 | 1740 Portoviejo Avenue                 | Sucre                |
+|        117 | 1079 Tel Aviv-Jaffa Boulevard          | Sucre                |
+|        207 | 1688 Nador Lane                        | Sulawesi Utara       |
+|        548 | 1658 Cuman Loop                        | Sumatera Selatan     |
+|        339 | 503 Sogamoso Loop                      | Sumqayit             |
+|        480 | 421 Yaound Street                      | Sumy                 |
+|        551 | 182 Nukualofa Drive                    | Sumy                 |
+|        191 | 140 Chiayi Parkway                     | Sumy                 |
+|        194 | 605 Rio Claro Parkway                  | Tabora               |
+|        317 | 780 Kimberley Way                      | Tabuk                |
+|        549 | 454 Qinhuangdao Drive                  | Tadla-Azilal         |
+|         47 | 1447 Imus Way                          | Tahiti               |
+|         60 | 1668 Saint Louis Place                 | Tahiti               |
+|        583 | 1489 Kakamigahara Lane                 | Taipei               |
+|        353 | 381 Kabul Way                          | Taipei               |
+|         34 | 1668 Anpolis Street                    | Taipei               |
+|        523 | 608 Birgunj Parkway                    | Taipei               |
+|        217 | 1001 Miyakonojo Lane                   | Taizz                |
+|        135 | 1752 So Leopoldo Parkway               | Taka-Karpatia        |
+|        181 | 146 Johannesburg Way                   | Tamaulipas           |
+|        408 | 990 Etawah Loop                        | Tamil Nadu           |
+|        292 | 1993 Tabuk Lane                        | Tamil Nadu           |
+|        426 | 1661 Abha Drive                        | Tamil Nadu           |
+|        276 | 1675 Xiangfan Manor                    | Tamil Nadu           |
+|        229 | 1014 Loja Manor                        | Tamil Nadu           |
+|        449 | 1289 Belm Boulevard                    | Tartumaa             |
+|         52 | 909 Garland Manor                      | Tatarstan            |
+|        452 | 207 Cuernavaca Loop                    | Tatarstan            |
+|        320 | 1542 Lubumbashi Boulevard              | Tel Aviv             |
+|        165 | 97 Shimoga Avenue                      | Tel Aviv             |
+|        144 | 1666 Beni-Mellal Place                 | Tennessee            |
+|        185 | 682 Garden Grove Place                 | Tennessee            |
+|        101 | 1599 Plock Drive                       | Tete                 |
+|        405 | 530 Lausanne Lane                      | Texas                |
+|        310 | 913 Coacalco de Berriozbal Loop        | Texas                |
+|         10 | 1795 Santiago de Compostela Way        | Texas                |
+|        122 | 333 Goinia Way                         | Texas                |
+|        567 | 1894 Boa Vista Way                     | Texas                |
+|        253 | 1760 Oshawa Manor                      | Tianjin              |
+|        572 | 539 Hami Way                           | Tokat                |
+|        580 | 923 Tangail Boulevard                  | Tokyo-to             |
+|        198 | 345 Oshawa Boulevard                   | Tokyo-to             |
+|        349 | 1516 Escobar Drive                     | Tongatapu            |
+|        547 | 379 Lublin Parkway                     | Toscana              |
+|        247 | 1483 Pathankot Street                  | Tucumn               |
+|        325 | 1892 Nabereznyje Telny Lane            | Tutuila              |
+|        355 | 469 Nakhon Sawan Street                | Tuvassia             |
+|        208 | 1215 Pyongyang Parkway                 | Usak                 |
+|        420 | 992 Klerksdorp Loop                    | Utrecht              |
+|        125 | 211 Chiayi Drive                       | Uttar Pradesh        |
+|        221 | 866 Shivapuri Manor                    | Uttar Pradesh        |
+|        196 | 9 San Miguel de Tucumn Manor           | Uttar Pradesh        |
+|        540 | 949 Allende Lane                       | Uttar Pradesh        |
+|        341 | 1920 Weifang Avenue                    | Uttar Pradesh        |
+|         36 | 176 Mandaluyong Place                  | Uttar Pradesh        |
+|         82 | 936 Salzburg Lane                      | Uttar Pradesh        |
+|        127 | 117 Boa Vista Way                      | Uttar Pradesh        |
+|         61 | 943 Tokat Street                       | Vaduz                |
+|        239 | 98 Stara Zagora Boulevard              | Valle                |
+|        604 | 1331 Usak Boulevard                    | Vaud                 |
+|        487 | 1785 So Bernardo do Campo Street       | Veracruz             |
+|        563 | 1059 Yuncheng Avenue                   | Vilna                |
+|        296 | 1936 Cuman Avenue                      | Virginia             |
+|        559 | 1917 Kumbakonam Parkway                | Vojvodina            |
+|        515 | 886 Tonghae Place                      | Volgograd            |
+|        216 | 660 Jedda Boulevard                    | Washington           |
+|        264 | 1027 Banjul Place                      | West Bengali         |
+|        418 | 126 Acua Parkway                       | West Bengali         |
+|        451 | 1704 Tambaram Manor                    | West Bengali         |
+|        190 | 435 0 Way                              | West Bengali         |
+|        507 | 1197 Sokoto Boulevard                  | West Bengali         |
+|         35 | 33 Gorontalo Way                       | West Bengali         |
+|        497 | 1013 Tabuk Boulevard                   | West Bengali         |
+|        235 | 954 Kimchon Place                      | West Bengali         |
+|        212 | 624 Oshawa Boulevard                   | West Bengali         |
+|        602 | 1101 Bucuresti Boulevard               | West Greece          |
+|        333 | 1860 Taguig Loop                       | West Java            |
+|        416 | 1445 Carmen Parkway                    | West Java            |
+|        530 | 1003 Qinhuangdao Street                | West Java            |
+|        243 | 47 Syktyvkar Lane                      | West Java            |
+|        343 | 1443 Mardan Street                     | Western Cape         |
+|        275 | 906 Goinia Way                         | Wielkopolskie        |
+|        169 | 154 Tallahassee Loop                   | Xinxiang             |
+|        288 | 226 Halifax Street                     | Xinxiang             |
+|         33 | 786 Aurora Avenue                      | Yamaguchi            |
+|         58 | 1964 Allappuzha (Alleppey) Street      | Yamaguchi            |
+|         45 | 42 Brindisi Place                      | Yerevan              |
+|        143 | 1029 Dzerzinsk Manor                   | Ynlin                |
+|        224 | 1842 Luzinia Boulevard                 | Zanzibar West        |
+|        556 | 346 Cam Ranh Avenue                    | Zhejiang             |
+|        558 | 904 Clarksville Drive                  | Zhejiang             |
+|        461 | 1889 Valparai Way                      | Ziguinchor           |
+|        503 | 1416 San Juan Bautista Tuxtepec Avenue | Zufar                |
+|        458 | 138 Caracas Boulevard                  | Zulia                |
++------------+----------------------------------------+----------------------+
+603 rows in set (0.00 sec)
+
+mysql> SELECT district, COUNT(*) FROM address GROUP BY district;
++----------------------+----------+
+| district             | COUNT(*) |
++----------------------+----------+
+| Alberta              |        2 |
+| QLD                  |        2 |
+| Nagasaki             |        1 |
+| California           |        9 |
+| Attika               |        1 |
+| Mandalay             |        1 |
+| Nantou               |        2 |
+| Texas                |        5 |
+| Central Serbia       |        1 |
+| Hamilton             |        1 |
+| Masqat               |        1 |
+| Esfahan              |        3 |
+| Kanagawa             |        2 |
+| Haryana              |        2 |
+| Osmaniye             |        1 |
+| Madhya Pradesh       |        3 |
+| England              |        7 |
+| Kalmykia             |        1 |
+| Kaduna               |        2 |
+| Northern Cape        |        1 |
+| Nothwest Border Prov |        1 |
+| Dhaka                |        3 |
+| Rabat-Sal-Zammour-Z  |        1 |
+| Liepaja              |        1 |
+| Crdoba               |        1 |
+| Sind                 |        2 |
+|                      |        3 |
+| Southern Mindanao    |        1 |
+| Bihar                |        3 |
+| Yamaguchi            |        2 |
+| Taipei               |        4 |
+| West Bengali         |        9 |
+| Uttar Pradesh        |        8 |
+| Piemonte             |        1 |
+| Okayama              |        3 |
+| Midi-Pyrnes          |        1 |
+| Markazi              |        1 |
+| Henan                |        3 |
+| Chisinau             |        1 |
+| Esprito Santo        |        1 |
+| Oriental             |        1 |
+| Yerevan              |        1 |
+| Nonthaburi           |        1 |
+| Tahiti               |        2 |
+| Lipetsk              |        2 |
+| Antofagasta          |        1 |
+| Moscow (City)        |        1 |
+| Cear                 |        1 |
+| Tatarstan            |        2 |
+| Mekka                |        2 |
+| Khartum              |        1 |
+| Galicia              |        3 |
+| Chiba                |        1 |
+| Moskova              |        4 |
+| Vaduz                |        1 |
+| Sarawak              |        1 |
+| Karnataka            |        5 |
+| Rajasthan            |        4 |
+| Basel-Stadt          |        1 |
+| Missouri             |        2 |
+| Nebraska             |        1 |
+| Sichuan              |        3 |
+| Cayenne              |        1 |
+| Skne ln              |        1 |
+| Hunan                |        2 |
+| Bchar                |        1 |
+| Eastern Visayas      |        1 |
+| National Capital Reg |        2 |
+| Chiayi               |        1 |
+| So Paulo             |        8 |
+| Changhwa             |        1 |
+| Pavlodar             |        1 |
+| Oyo & Osun           |        4 |
+| Mahajanga            |        1 |
+| Krim                 |        1 |
+| Gauteng              |        4 |
+| Puebla               |        1 |
+| Songkhla             |        1 |
+| Sucre                |        2 |
+| Cheju                |        1 |
+| Buenos Aires         |       10 |
+| Guangdong            |        4 |
+| Brunei and Muara     |        1 |
+| Gois                 |        5 |
+| Inner Mongolia       |        4 |
+| Caraga               |        2 |
+| Punjab               |        5 |
+| Georgia              |        1 |
+| Tete                 |        1 |
+| Abu Dhabi            |        2 |
+| Kyongsangbuk         |        1 |
+| Asir                 |        1 |
+| Ha Darom             |        2 |
+| Kwara & Kogi         |        1 |
+| Provence-Alpes-Cte   |        1 |
+| Funafuti             |        1 |
+| Ivanovo              |        1 |
+| Mxico                |        4 |
+| North West           |        2 |
+| Hubei                |        5 |
+| Distrito Federal     |        2 |
+| Nordrhein-Westfalen  |        3 |
+| Central Java         |        3 |
+| Gujarat              |        3 |
+| al-Qalyubiya         |        2 |
+| Risaralda            |        2 |
+| Lima                 |        1 |
+| Ktahya               |        1 |
+| Smolensk             |        1 |
+| Slaskie              |        3 |
+| Shandong             |        9 |
+| Taka-Karpatia        |        1 |
+| Free State           |        1 |
+| Coahuila de Zaragoza |        3 |
+| Maharashtra          |        7 |
+| Gelderland           |        2 |
+| Ynlin                |        1 |
+| Tennessee            |        2 |
+| Hiroshima            |        3 |
+| Scotland             |        1 |
+| Kilis                |        1 |
+| Minsk                |        1 |
+| Michigan             |        2 |
+| Saitama              |        3 |
+| Saint-Denis          |        1 |
+| Massachusetts        |        1 |
+| Michoacn de Ocampo   |        2 |
+| Assam                |        1 |
+| Jakarta Raya         |        1 |
+| Shanxi               |        2 |
+| Bern                 |        1 |
+| Ondo & Ekiti         |        3 |
+| Pyongyang-si         |        1 |
+| North Carolina       |        1 |
+| North Austria        |        1 |
+| Tel Aviv             |        2 |
+| Pays de la Loire     |        1 |
+| Gifu                 |        1 |
+| Adana                |        2 |
+| Xinxiang             |        2 |
+| Lilongwe             |        1 |
+| Gansu                |        2 |
+| Jiangxi              |        1 |
+| Perak                |        1 |
+| Batman               |        1 |
+| Steiermark           |        1 |
+| Miranda              |        1 |
+| Kerala               |        2 |
+| Skikda               |        1 |
+| Tamaulipas           |        1 |
+| Kirov                |        1 |
+| Noord-Brabant        |        1 |
+| Chaharmahal va Bakht |        1 |
+| Sumy                 |        3 |
+| Ontario              |        3 |
+| Tabora               |        1 |
+| Rostov-na-Donu       |        1 |
+| Nyanza               |        1 |
+| Tokyo-to             |        2 |
+| Baden-Wrttemberg     |        1 |
+| Jiangsu              |        2 |
+| Haiphong             |        1 |
+| Ahal                 |        1 |
+| Sulawesi Utara       |        1 |
+| Usak                 |        1 |
+| Alto Paran           |        1 |
+| Santa Catarina       |        1 |
+| Kitaa                |        1 |
+| Aden                 |        1 |
+| Jilin                |        2 |
+| Washington           |        1 |
+| Taizz                |        1 |
+| Haskovo              |        1 |
+| Kabol                |        1 |
+| Zanzibar West        |        1 |
+| Sisilia              |        1 |
+| Jaroslavl            |        1 |
+| Tamil Nadu           |        5 |
+| Asuncin              |        1 |
+| Saarland             |        1 |
+| Phnom Penh           |        1 |
+| Botosani             |        1 |
+| Qina                 |        1 |
+| Hawalli              |        1 |
+| Valle                |        1 |
+| Southern Tagalog     |        6 |
+| Chollanam            |        1 |
+| West Java            |        4 |
+| Fukushima            |        2 |
+| Hebei                |        1 |
+| Tucumn               |        1 |
+| Central Visayas      |        1 |
+| Kyonggi              |        1 |
+| Paran                |        1 |
+| Florida              |        2 |
+| Tianjin              |        1 |
+| Anhalt Sachsen       |        1 |
+| Miyazaki             |        1 |
+| Minas Gerais         |        3 |
+| Central Luzon        |        3 |
+| Sagaing              |        1 |
+| Sofala               |        1 |
+| Santiago             |        1 |
+| Cagayan Valley       |        1 |
+| Manab                |        1 |
+| Osaka                |        2 |
+| Severn Morava        |        1 |
+| Salzburg             |        1 |
+| Wielkopolskie        |        1 |
+| Guanajuato           |        4 |
+| Illinois             |        4 |
+| Bursa                |        1 |
+| East Azerbaidzan     |        1 |
+| Fujian               |        1 |
+| Ponce                |        1 |
+| Edo & Delta          |        1 |
+| Shiga                |        1 |
+| Kowloon and New Kowl |        1 |
+| Gurico               |        1 |
+| Virginia             |        1 |
+| Sharja               |        1 |
+| Baskimaa             |        1 |
+| Ohio                 |        2 |
+| Pietari              |        1 |
+| Pohjois-Pohjanmaa    |        1 |
+| Kaliningrad          |        1 |
+| Liaoning             |        3 |
+| Sanaa                |        1 |
+| Callao               |        1 |
+| Kedah                |        1 |
+| Rio de Janeiro       |        1 |
+| Lombardia            |        2 |
+| Kursk                |        1 |
+| Tabuk                |        1 |
+| Streymoyar           |        1 |
+| Kujawsko-Pomorskie   |        1 |
+| Tutuila              |        1 |
+| Central              |        3 |
+| Morelos              |        2 |
+| St George            |        1 |
+| Santa F              |        1 |
+| Baki                 |        1 |
+| Sumqayit             |        1 |
+| Sousse               |        1 |
+| Western Cape         |        1 |
+| Hanoi                |        1 |
+| Roraima              |        1 |
+| Baja California      |        1 |
+| Tongatapu            |        1 |
+| Adygea               |        1 |
+| Daugavpils           |        1 |
+| Tuvassia             |        1 |
+| Krasnojarsk          |        2 |
+| Nord-Ouest           |        1 |
+| Hidalgo              |        2 |
+| Shimane              |        1 |
+| Bratislava           |        1 |
+| Jharkhand            |        2 |
+| Arecibo              |        1 |
+| Centre               |        1 |
+| Par                  |        1 |
+| Jalisco              |        2 |
+| Okinawa              |        1 |
+| Balikesir            |        1 |
+| Andhra Pradesh       |        3 |
+| Chihuahua            |        2 |
+| East Java            |        2 |
+| Pernambuco           |        1 |
+| East Kasai           |        1 |
+| Kurgan               |        1 |
+| Kermanshah           |        1 |
+| New Hampshire        |        1 |
+| Namibe               |        1 |
+| Ibaragi              |        1 |
+| Hmelnytskyi          |        1 |
+| Shaba                |        1 |
+| Nakhon Sawan         |        1 |
+| Addis Abeba          |        1 |
+| Asturia              |        1 |
+| al-Qadarif           |        1 |
+| Rio Grande do Sul    |        3 |
+| Bretagne             |        1 |
+| St Thomas            |        1 |
+| Northern             |        1 |
+| Bauchi & Gombe       |        1 |
+| Utrecht              |        1 |
+| al-Sharqiya          |        2 |
+| Puerto Plata         |        1 |
+| Sawhaj               |        1 |
+| Oaxaca               |        1 |
+| Komi                 |        1 |
+| Nizni Novgorod       |        1 |
+| Chuquisaca           |        1 |
+| KwaZulu-Natal        |        2 |
+| Nampula              |        1 |
+| Northern Mindanao    |        2 |
+| British Colombia     |        1 |
+| La Romana            |        1 |
+| Copperbelt           |        1 |
+| Batna                |        1 |
+| Tartumaa             |        1 |
+| Baijeri              |        1 |
+| Kerman               |        1 |
+| Sinaloa              |        1 |
+| Zulia                |        1 |
+| La Paz               |        1 |
+| Ziguinchor           |        1 |
+| Caquet               |        1 |
+| Irkutsk              |        1 |
+| Nova Scotia          |        1 |
+| OHiggins             |        1 |
+| Hodeida              |        1 |
+| Nam Ha               |        1 |
+| Aceh                 |        1 |
+| Drenthe              |        1 |
+| Qubec                |        1 |
+| Gaziantep            |        1 |
+| Mwanza               |        1 |
+| Veracruz             |        1 |
+| Denizli              |        1 |
+| Ningxia              |        1 |
+| Stavropol            |        1 |
+| Baja California Sur  |        1 |
+| Boyac                |        1 |
+| al-Daqahliya         |        1 |
+| Istanbul             |        1 |
+| Chimborazo           |        1 |
+| Zufar                |        1 |
+| Apulia               |        1 |
+| Lubelskie            |        1 |
+| Nagano               |        1 |
+| Kalimantan Barat     |        1 |
+| Eskisehir            |        1 |
+| Volgograd            |        1 |
+| Heilongjiang         |        2 |
+| Coquimbo             |        1 |
+| Battambang           |        1 |
+| Sivas                |        1 |
+| Gumma                |        1 |
+| Khanh Hoa            |        2 |
+| Nghe An              |        1 |
+| Friuli-Venezia Giuli |        1 |
+| Mogiljov             |        1 |
+| Benguela             |        1 |
+| Mie                  |        1 |
+| Chari-Baguirmi       |        1 |
+| Kang-won             |        1 |
+| Colorado             |        1 |
+| Carabobo             |        1 |
+| Ruse                 |        1 |
+| Toscana              |        1 |
+| Sumatera Selatan     |        1 |
+| Tadla-Azilal         |        1 |
+| Hainan               |        1 |
+| Ishikawa             |        1 |
+| Zhejiang             |        2 |
+| Vojvodina            |        1 |
+| Vilna                |        1 |
+| Dolnoslaskie         |        1 |
+| Sokoto & Kebbi & Zam |        1 |
+| Bukarest             |        1 |
+| Huanuco              |        1 |
+| Tokat                |        1 |
+| Anzotegui            |        1 |
+| Mazowieckie          |        1 |
+| Qaraghandy           |        1 |
+| Kaohsiung            |        1 |
+| Campeche             |        1 |
+| Ninawa               |        1 |
+| Central Mindanao     |        1 |
+| Guerrero             |        1 |
+| Banjul               |        1 |
+| Loja                 |        1 |
+| al-Manama            |        1 |
+| Fejr                 |        1 |
+| West Greece          |        1 |
+| Piura                |        1 |
+| Vaud                 |        1 |
++----------------------+----------+
+378 rows in set (0.00 sec)
+
+mysql> SELECT district, COUNT(*) AS NoOfAddressesInADistrict FROM address GROUP BY district ORDER BY district;
++----------------------+--------------------------+
+| district             | NoOfAddressesInADistrict |
++----------------------+--------------------------+
+|                      |                        3 |
+| Abu Dhabi            |                        2 |
+| Aceh                 |                        1 |
+| Adana                |                        2 |
+| Addis Abeba          |                        1 |
+| Aden                 |                        1 |
+| Adygea               |                        1 |
+| Ahal                 |                        1 |
+| al-Daqahliya         |                        1 |
+| al-Manama            |                        1 |
+| al-Qadarif           |                        1 |
+| al-Qalyubiya         |                        2 |
+| al-Sharqiya          |                        2 |
+| Alberta              |                        2 |
+| Alto Paran           |                        1 |
+| Andhra Pradesh       |                        3 |
+| Anhalt Sachsen       |                        1 |
+| Antofagasta          |                        1 |
+| Anzotegui            |                        1 |
+| Apulia               |                        1 |
+| Arecibo              |                        1 |
+| Asir                 |                        1 |
+| Assam                |                        1 |
+| Asturia              |                        1 |
+| Asuncin              |                        1 |
+| Attika               |                        1 |
+| Baden-Wrttemberg     |                        1 |
+| Baijeri              |                        1 |
+| Baja California      |                        1 |
+| Baja California Sur  |                        1 |
+| Baki                 |                        1 |
+| Balikesir            |                        1 |
+| Banjul               |                        1 |
+| Basel-Stadt          |                        1 |
+| Baskimaa             |                        1 |
+| Batman               |                        1 |
+| Batna                |                        1 |
+| Battambang           |                        1 |
+| Bauchi & Gombe       |                        1 |
+| Bchar                |                        1 |
+| Benguela             |                        1 |
+| Bern                 |                        1 |
+| Bihar                |                        3 |
+| Botosani             |                        1 |
+| Boyac                |                        1 |
+| Bratislava           |                        1 |
+| Bretagne             |                        1 |
+| British Colombia     |                        1 |
+| Brunei and Muara     |                        1 |
+| Buenos Aires         |                       10 |
+| Bukarest             |                        1 |
+| Bursa                |                        1 |
+| Cagayan Valley       |                        1 |
+| California           |                        9 |
+| Callao               |                        1 |
+| Campeche             |                        1 |
+| Caquet               |                        1 |
+| Carabobo             |                        1 |
+| Caraga               |                        2 |
+| Cayenne              |                        1 |
+| Cear                 |                        1 |
+| Central              |                        3 |
+| Central Java         |                        3 |
+| Central Luzon        |                        3 |
+| Central Mindanao     |                        1 |
+| Central Serbia       |                        1 |
+| Central Visayas      |                        1 |
+| Centre               |                        1 |
+| Chaharmahal va Bakht |                        1 |
+| Changhwa             |                        1 |
+| Chari-Baguirmi       |                        1 |
+| Cheju                |                        1 |
+| Chiayi               |                        1 |
+| Chiba                |                        1 |
+| Chihuahua            |                        2 |
+| Chimborazo           |                        1 |
+| Chisinau             |                        1 |
+| Chollanam            |                        1 |
+| Chuquisaca           |                        1 |
+| Coahuila de Zaragoza |                        3 |
+| Colorado             |                        1 |
+| Copperbelt           |                        1 |
+| Coquimbo             |                        1 |
+| Crdoba               |                        1 |
+| Daugavpils           |                        1 |
+| Denizli              |                        1 |
+| Dhaka                |                        3 |
+| Distrito Federal     |                        2 |
+| Dolnoslaskie         |                        1 |
+| Drenthe              |                        1 |
+| East Azerbaidzan     |                        1 |
+| East Java            |                        2 |
+| East Kasai           |                        1 |
+| Eastern Visayas      |                        1 |
+| Edo & Delta          |                        1 |
+| England              |                        7 |
+| Esfahan              |                        3 |
+| Eskisehir            |                        1 |
+| Esprito Santo        |                        1 |
+| Fejr                 |                        1 |
+| Florida              |                        2 |
+| Free State           |                        1 |
+| Friuli-Venezia Giuli |                        1 |
+| Fujian               |                        1 |
+| Fukushima            |                        2 |
+| Funafuti             |                        1 |
+| Galicia              |                        3 |
+| Gansu                |                        2 |
+| Gauteng              |                        4 |
+| Gaziantep            |                        1 |
+| Gelderland           |                        2 |
+| Georgia              |                        1 |
+| Gifu                 |                        1 |
+| Gois                 |                        5 |
+| Guanajuato           |                        4 |
+| Guangdong            |                        4 |
+| Guerrero             |                        1 |
+| Gujarat              |                        3 |
+| Gumma                |                        1 |
+| Gurico               |                        1 |
+| Ha Darom             |                        2 |
+| Hainan               |                        1 |
+| Haiphong             |                        1 |
+| Hamilton             |                        1 |
+| Hanoi                |                        1 |
+| Haryana              |                        2 |
+| Haskovo              |                        1 |
+| Hawalli              |                        1 |
+| Hebei                |                        1 |
+| Heilongjiang         |                        2 |
+| Henan                |                        3 |
+| Hidalgo              |                        2 |
+| Hiroshima            |                        3 |
+| Hmelnytskyi          |                        1 |
+| Hodeida              |                        1 |
+| Huanuco              |                        1 |
+| Hubei                |                        5 |
+| Hunan                |                        2 |
+| Ibaragi              |                        1 |
+| Illinois             |                        4 |
+| Inner Mongolia       |                        4 |
+| Irkutsk              |                        1 |
+| Ishikawa             |                        1 |
+| Istanbul             |                        1 |
+| Ivanovo              |                        1 |
+| Jakarta Raya         |                        1 |
+| Jalisco              |                        2 |
+| Jaroslavl            |                        1 |
+| Jharkhand            |                        2 |
+| Jiangsu              |                        2 |
+| Jiangxi              |                        1 |
+| Jilin                |                        2 |
+| Kabol                |                        1 |
+| Kaduna               |                        2 |
+| Kalimantan Barat     |                        1 |
+| Kaliningrad          |                        1 |
+| Kalmykia             |                        1 |
+| Kanagawa             |                        2 |
+| Kang-won             |                        1 |
+| Kaohsiung            |                        1 |
+| Karnataka            |                        5 |
+| Kedah                |                        1 |
+| Kerala               |                        2 |
+| Kerman               |                        1 |
+| Kermanshah           |                        1 |
+| Khanh Hoa            |                        2 |
+| Khartum              |                        1 |
+| Kilis                |                        1 |
+| Kirov                |                        1 |
+| Kitaa                |                        1 |
+| Komi                 |                        1 |
+| Kowloon and New Kowl |                        1 |
+| Krasnojarsk          |                        2 |
+| Krim                 |                        1 |
+| Ktahya               |                        1 |
+| Kujawsko-Pomorskie   |                        1 |
+| Kurgan               |                        1 |
+| Kursk                |                        1 |
+| Kwara & Kogi         |                        1 |
+| KwaZulu-Natal        |                        2 |
+| Kyonggi              |                        1 |
+| Kyongsangbuk         |                        1 |
+| La Paz               |                        1 |
+| La Romana            |                        1 |
+| Liaoning             |                        3 |
+| Liepaja              |                        1 |
+| Lilongwe             |                        1 |
+| Lima                 |                        1 |
+| Lipetsk              |                        2 |
+| Loja                 |                        1 |
+| Lombardia            |                        2 |
+| Lubelskie            |                        1 |
+| Madhya Pradesh       |                        3 |
+| Mahajanga            |                        1 |
+| Maharashtra          |                        7 |
+| Manab                |                        1 |
+| Mandalay             |                        1 |
+| Markazi              |                        1 |
+| Masqat               |                        1 |
+| Massachusetts        |                        1 |
+| Mazowieckie          |                        1 |
+| Mekka                |                        2 |
+| Michigan             |                        2 |
+| Michoacn de Ocampo   |                        2 |
+| Midi-Pyrnes          |                        1 |
+| Mie                  |                        1 |
+| Minas Gerais         |                        3 |
+| Minsk                |                        1 |
+| Miranda              |                        1 |
+| Missouri             |                        2 |
+| Miyazaki             |                        1 |
+| Mogiljov             |                        1 |
+| Morelos              |                        2 |
+| Moscow (City)        |                        1 |
+| Moskova              |                        4 |
+| Mwanza               |                        1 |
+| Mxico                |                        4 |
+| Nagano               |                        1 |
+| Nagasaki             |                        1 |
+| Nakhon Sawan         |                        1 |
+| Nam Ha               |                        1 |
+| Namibe               |                        1 |
+| Nampula              |                        1 |
+| Nantou               |                        2 |
+| National Capital Reg |                        2 |
+| Nebraska             |                        1 |
+| New Hampshire        |                        1 |
+| Nghe An              |                        1 |
+| Ninawa               |                        1 |
+| Ningxia              |                        1 |
+| Nizni Novgorod       |                        1 |
+| Nonthaburi           |                        1 |
+| Noord-Brabant        |                        1 |
+| Nord-Ouest           |                        1 |
+| Nordrhein-Westfalen  |                        3 |
+| North Austria        |                        1 |
+| North Carolina       |                        1 |
+| North West           |                        2 |
+| Northern             |                        1 |
+| Northern Cape        |                        1 |
+| Northern Mindanao    |                        2 |
+| Nothwest Border Prov |                        1 |
+| Nova Scotia          |                        1 |
+| Nyanza               |                        1 |
+| Oaxaca               |                        1 |
+| OHiggins             |                        1 |
+| Ohio                 |                        2 |
+| Okayama              |                        3 |
+| Okinawa              |                        1 |
+| Ondo & Ekiti         |                        3 |
+| Ontario              |                        3 |
+| Oriental             |                        1 |
+| Osaka                |                        2 |
+| Osmaniye             |                        1 |
+| Oyo & Osun           |                        4 |
+| Par                  |                        1 |
+| Paran                |                        1 |
+| Pavlodar             |                        1 |
+| Pays de la Loire     |                        1 |
+| Perak                |                        1 |
+| Pernambuco           |                        1 |
+| Phnom Penh           |                        1 |
+| Piemonte             |                        1 |
+| Pietari              |                        1 |
+| Piura                |                        1 |
+| Pohjois-Pohjanmaa    |                        1 |
+| Ponce                |                        1 |
+| Provence-Alpes-Cte   |                        1 |
+| Puebla               |                        1 |
+| Puerto Plata         |                        1 |
+| Punjab               |                        5 |
+| Pyongyang-si         |                        1 |
+| Qaraghandy           |                        1 |
+| Qina                 |                        1 |
+| QLD                  |                        2 |
+| Qubec                |                        1 |
+| Rabat-Sal-Zammour-Z  |                        1 |
+| Rajasthan            |                        4 |
+| Rio de Janeiro       |                        1 |
+| Rio Grande do Sul    |                        3 |
+| Risaralda            |                        2 |
+| Roraima              |                        1 |
+| Rostov-na-Donu       |                        1 |
+| Ruse                 |                        1 |
+| Saarland             |                        1 |
+| Sagaing              |                        1 |
+| Saint-Denis          |                        1 |
+| Saitama              |                        3 |
+| Salzburg             |                        1 |
+| Sanaa                |                        1 |
+| Santa Catarina       |                        1 |
+| Santa F              |                        1 |
+| Santiago             |                        1 |
+| Sarawak              |                        1 |
+| Sawhaj               |                        1 |
+| Scotland             |                        1 |
+| Severn Morava        |                        1 |
+| Shaba                |                        1 |
+| Shandong             |                        9 |
+| Shanxi               |                        2 |
+| Sharja               |                        1 |
+| Shiga                |                        1 |
+| Shimane              |                        1 |
+| Sichuan              |                        3 |
+| Sinaloa              |                        1 |
+| Sind                 |                        2 |
+| Sisilia              |                        1 |
+| Sivas                |                        1 |
+| Skikda               |                        1 |
+| Skne ln              |                        1 |
+| Slaskie              |                        3 |
+| Smolensk             |                        1 |
+| So Paulo             |                        8 |
+| Sofala               |                        1 |
+| Sokoto & Kebbi & Zam |                        1 |
+| Songkhla             |                        1 |
+| Sousse               |                        1 |
+| Southern Mindanao    |                        1 |
+| Southern Tagalog     |                        6 |
+| St George            |                        1 |
+| St Thomas            |                        1 |
+| Stavropol            |                        1 |
+| Steiermark           |                        1 |
+| Streymoyar           |                        1 |
+| Sucre                |                        2 |
+| Sulawesi Utara       |                        1 |
+| Sumatera Selatan     |                        1 |
+| Sumqayit             |                        1 |
+| Sumy                 |                        3 |
+| Tabora               |                        1 |
+| Tabuk                |                        1 |
+| Tadla-Azilal         |                        1 |
+| Tahiti               |                        2 |
+| Taipei               |                        4 |
+| Taizz                |                        1 |
+| Taka-Karpatia        |                        1 |
+| Tamaulipas           |                        1 |
+| Tamil Nadu           |                        5 |
+| Tartumaa             |                        1 |
+| Tatarstan            |                        2 |
+| Tel Aviv             |                        2 |
+| Tennessee            |                        2 |
+| Tete                 |                        1 |
+| Texas                |                        5 |
+| Tianjin              |                        1 |
+| Tokat                |                        1 |
+| Tokyo-to             |                        2 |
+| Tongatapu            |                        1 |
+| Toscana              |                        1 |
+| Tucumn               |                        1 |
+| Tutuila              |                        1 |
+| Tuvassia             |                        1 |
+| Usak                 |                        1 |
+| Utrecht              |                        1 |
+| Uttar Pradesh        |                        8 |
+| Vaduz                |                        1 |
+| Valle                |                        1 |
+| Vaud                 |                        1 |
+| Veracruz             |                        1 |
+| Vilna                |                        1 |
+| Virginia             |                        1 |
+| Vojvodina            |                        1 |
+| Volgograd            |                        1 |
+| Washington           |                        1 |
+| West Bengali         |                        9 |
+| West Greece          |                        1 |
+| West Java            |                        4 |
+| Western Cape         |                        1 |
+| Wielkopolskie        |                        1 |
+| Xinxiang             |                        2 |
+| Yamaguchi            |                        2 |
+| Yerevan              |                        1 |
+| Ynlin                |                        1 |
+| Zanzibar West        |                        1 |
+| Zhejiang             |                        2 |
+| Ziguinchor           |                        1 |
+| Zufar                |                        1 |
+| Zulia                |                        1 |
++----------------------+--------------------------+
+378 rows in set (0.00 sec)
+
+mysql> SELECT district, COUNT(*) AS NoOfAddressesInADistrict FROM address GROUP BY district ORDER BY NoOfAddressesInADistrict;
++----------------------+--------------------------+
+| district             | NoOfAddressesInADistrict |
++----------------------+--------------------------+
+| Nagasaki             |                        1 |
+| Attika               |                        1 |
+| Mandalay             |                        1 |
+| Central Serbia       |                        1 |
+| Hamilton             |                        1 |
+| Masqat               |                        1 |
+| Osmaniye             |                        1 |
+| Kalmykia             |                        1 |
+| Northern Cape        |                        1 |
+| Nothwest Border Prov |                        1 |
+| Rabat-Sal-Zammour-Z  |                        1 |
+| Liepaja              |                        1 |
+| Crdoba               |                        1 |
+| Southern Mindanao    |                        1 |
+| Piemonte             |                        1 |
+| Midi-Pyrnes          |                        1 |
+| Markazi              |                        1 |
+| Chisinau             |                        1 |
+| Esprito Santo        |                        1 |
+| Oriental             |                        1 |
+| Yerevan              |                        1 |
+| Nonthaburi           |                        1 |
+| Antofagasta          |                        1 |
+| Moscow (City)        |                        1 |
+| Cear                 |                        1 |
+| Khartum              |                        1 |
+| Chiba                |                        1 |
+| Vaduz                |                        1 |
+| Sarawak              |                        1 |
+| Basel-Stadt          |                        1 |
+| Nebraska             |                        1 |
+| Cayenne              |                        1 |
+| Skne ln              |                        1 |
+| Bchar                |                        1 |
+| Eastern Visayas      |                        1 |
+| Chiayi               |                        1 |
+| Changhwa             |                        1 |
+| Pavlodar             |                        1 |
+| Mahajanga            |                        1 |
+| Krim                 |                        1 |
+| Puebla               |                        1 |
+| Songkhla             |                        1 |
+| Cheju                |                        1 |
+| Brunei and Muara     |                        1 |
+| Georgia              |                        1 |
+| Tete                 |                        1 |
+| Kyongsangbuk         |                        1 |
+| Asir                 |                        1 |
+| Kwara & Kogi         |                        1 |
+| Provence-Alpes-Cte   |                        1 |
+| Funafuti             |                        1 |
+| Ivanovo              |                        1 |
+| Lima                 |                        1 |
+| Ktahya               |                        1 |
+| Smolensk             |                        1 |
+| Taka-Karpatia        |                        1 |
+| Free State           |                        1 |
+| Ynlin                |                        1 |
+| Scotland             |                        1 |
+| Kilis                |                        1 |
+| Minsk                |                        1 |
+| Saint-Denis          |                        1 |
+| Massachusetts        |                        1 |
+| Assam                |                        1 |
+| Jakarta Raya         |                        1 |
+| Bern                 |                        1 |
+| Pyongyang-si         |                        1 |
+| North Carolina       |                        1 |
+| North Austria        |                        1 |
+| Pays de la Loire     |                        1 |
+| Gifu                 |                        1 |
+| Lilongwe             |                        1 |
+| Jiangxi              |                        1 |
+| Perak                |                        1 |
+| Batman               |                        1 |
+| Steiermark           |                        1 |
+| Miranda              |                        1 |
+| Skikda               |                        1 |
+| Tamaulipas           |                        1 |
+| Kirov                |                        1 |
+| Noord-Brabant        |                        1 |
+| Chaharmahal va Bakht |                        1 |
+| Tabora               |                        1 |
+| Rostov-na-Donu       |                        1 |
+| Nyanza               |                        1 |
+| Baden-Wrttemberg     |                        1 |
+| Haiphong             |                        1 |
+| Ahal                 |                        1 |
+| Sulawesi Utara       |                        1 |
+| Usak                 |                        1 |
+| Alto Paran           |                        1 |
+| Santa Catarina       |                        1 |
+| Kitaa                |                        1 |
+| Aden                 |                        1 |
+| Washington           |                        1 |
+| Taizz                |                        1 |
+| Haskovo              |                        1 |
+| Kabol                |                        1 |
+| Zanzibar West        |                        1 |
+| Sisilia              |                        1 |
+| Jaroslavl            |                        1 |
+| Asuncin              |                        1 |
+| Saarland             |                        1 |
+| Phnom Penh           |                        1 |
+| Botosani             |                        1 |
+| Qina                 |                        1 |
+| Hawalli              |                        1 |
+| Valle                |                        1 |
+| Chollanam            |                        1 |
+| Hebei                |                        1 |
+| Tucumn               |                        1 |
+| Central Visayas      |                        1 |
+| Kyonggi              |                        1 |
+| Paran                |                        1 |
+| Tianjin              |                        1 |
+| Anhalt Sachsen       |                        1 |
+| Miyazaki             |                        1 |
+| Sagaing              |                        1 |
+| Sofala               |                        1 |
+| Santiago             |                        1 |
+| Cagayan Valley       |                        1 |
+| Manab                |                        1 |
+| Severn Morava        |                        1 |
+| Salzburg             |                        1 |
+| Wielkopolskie        |                        1 |
+| Bursa                |                        1 |
+| East Azerbaidzan     |                        1 |
+| Fujian               |                        1 |
+| Ponce                |                        1 |
+| Edo & Delta          |                        1 |
+| Shiga                |                        1 |
+| Kowloon and New Kowl |                        1 |
+| Gurico               |                        1 |
+| Virginia             |                        1 |
+| Sharja               |                        1 |
+| Baskimaa             |                        1 |
+| Pietari              |                        1 |
+| Pohjois-Pohjanmaa    |                        1 |
+| Kaliningrad          |                        1 |
+| Sanaa                |                        1 |
+| Callao               |                        1 |
+| Kedah                |                        1 |
+| Rio de Janeiro       |                        1 |
+| Kursk                |                        1 |
+| Tabuk                |                        1 |
+| Streymoyar           |                        1 |
+| Kujawsko-Pomorskie   |                        1 |
+| Tutuila              |                        1 |
+| St George            |                        1 |
+| Santa F              |                        1 |
+| Baki                 |                        1 |
+| Sumqayit             |                        1 |
+| Sousse               |                        1 |
+| Western Cape         |                        1 |
+| Hanoi                |                        1 |
+| Roraima              |                        1 |
+| Baja California      |                        1 |
+| Tongatapu            |                        1 |
+| Adygea               |                        1 |
+| Daugavpils           |                        1 |
+| Tuvassia             |                        1 |
+| Nord-Ouest           |                        1 |
+| Shimane              |                        1 |
+| Bratislava           |                        1 |
+| Arecibo              |                        1 |
+| Centre               |                        1 |
+| Par                  |                        1 |
+| Okinawa              |                        1 |
+| Balikesir            |                        1 |
+| Pernambuco           |                        1 |
+| East Kasai           |                        1 |
+| Kurgan               |                        1 |
+| Kermanshah           |                        1 |
+| New Hampshire        |                        1 |
+| Namibe               |                        1 |
+| Ibaragi              |                        1 |
+| Hmelnytskyi          |                        1 |
+| Shaba                |                        1 |
+| Nakhon Sawan         |                        1 |
+| Addis Abeba          |                        1 |
+| Asturia              |                        1 |
+| al-Qadarif           |                        1 |
+| Bretagne             |                        1 |
+| St Thomas            |                        1 |
+| Northern             |                        1 |
+| Bauchi & Gombe       |                        1 |
+| Utrecht              |                        1 |
+| Puerto Plata         |                        1 |
+| Sawhaj               |                        1 |
+| Oaxaca               |                        1 |
+| Komi                 |                        1 |
+| Nizni Novgorod       |                        1 |
+| Chuquisaca           |                        1 |
+| Nampula              |                        1 |
+| British Colombia     |                        1 |
+| La Romana            |                        1 |
+| Copperbelt           |                        1 |
+| Batna                |                        1 |
+| Tartumaa             |                        1 |
+| Baijeri              |                        1 |
+| Kerman               |                        1 |
+| Sinaloa              |                        1 |
+| Zulia                |                        1 |
+| La Paz               |                        1 |
+| Ziguinchor           |                        1 |
+| Caquet               |                        1 |
+| Irkutsk              |                        1 |
+| Nova Scotia          |                        1 |
+| OHiggins             |                        1 |
+| Hodeida              |                        1 |
+| Nam Ha               |                        1 |
+| Aceh                 |                        1 |
+| Drenthe              |                        1 |
+| Qubec                |                        1 |
+| Gaziantep            |                        1 |
+| Mwanza               |                        1 |
+| Veracruz             |                        1 |
+| Denizli              |                        1 |
+| Ningxia              |                        1 |
+| Stavropol            |                        1 |
+| Baja California Sur  |                        1 |
+| Boyac                |                        1 |
+| al-Daqahliya         |                        1 |
+| Istanbul             |                        1 |
+| Chimborazo           |                        1 |
+| Zufar                |                        1 |
+| Apulia               |                        1 |
+| Lubelskie            |                        1 |
+| Nagano               |                        1 |
+| Kalimantan Barat     |                        1 |
+| Eskisehir            |                        1 |
+| Volgograd            |                        1 |
+| Coquimbo             |                        1 |
+| Battambang           |                        1 |
+| Sivas                |                        1 |
+| Gumma                |                        1 |
+| Nghe An              |                        1 |
+| Friuli-Venezia Giuli |                        1 |
+| Mogiljov             |                        1 |
+| Benguela             |                        1 |
+| Mie                  |                        1 |
+| Chari-Baguirmi       |                        1 |
+| Kang-won             |                        1 |
+| Colorado             |                        1 |
+| Carabobo             |                        1 |
+| Ruse                 |                        1 |
+| Toscana              |                        1 |
+| Sumatera Selatan     |                        1 |
+| Tadla-Azilal         |                        1 |
+| Hainan               |                        1 |
+| Ishikawa             |                        1 |
+| Vojvodina            |                        1 |
+| Vilna                |                        1 |
+| Dolnoslaskie         |                        1 |
+| Sokoto & Kebbi & Zam |                        1 |
+| Bukarest             |                        1 |
+| Huanuco              |                        1 |
+| Tokat                |                        1 |
+| Anzotegui            |                        1 |
+| Mazowieckie          |                        1 |
+| Qaraghandy           |                        1 |
+| Kaohsiung            |                        1 |
+| Campeche             |                        1 |
+| Ninawa               |                        1 |
+| Central Mindanao     |                        1 |
+| Guerrero             |                        1 |
+| Banjul               |                        1 |
+| Loja                 |                        1 |
+| al-Manama            |                        1 |
+| Fejr                 |                        1 |
+| West Greece          |                        1 |
+| Piura                |                        1 |
+| Vaud                 |                        1 |
+| Alberta              |                        2 |
+| QLD                  |                        2 |
+| Nantou               |                        2 |
+| Kanagawa             |                        2 |
+| Haryana              |                        2 |
+| Kaduna               |                        2 |
+| Sind                 |                        2 |
+| Yamaguchi            |                        2 |
+| Tahiti               |                        2 |
+| Lipetsk              |                        2 |
+| Tatarstan            |                        2 |
+| Mekka                |                        2 |
+| Missouri             |                        2 |
+| Hunan                |                        2 |
+| National Capital Reg |                        2 |
+| Sucre                |                        2 |
+| Caraga               |                        2 |
+| Abu Dhabi            |                        2 |
+| Ha Darom             |                        2 |
+| North West           |                        2 |
+| Distrito Federal     |                        2 |
+| al-Qalyubiya         |                        2 |
+| Risaralda            |                        2 |
+| Gelderland           |                        2 |
+| Tennessee            |                        2 |
+| Michigan             |                        2 |
+| Michoacn de Ocampo   |                        2 |
+| Shanxi               |                        2 |
+| Tel Aviv             |                        2 |
+| Adana                |                        2 |
+| Xinxiang             |                        2 |
+| Gansu                |                        2 |
+| Kerala               |                        2 |
+| Tokyo-to             |                        2 |
+| Jiangsu              |                        2 |
+| Jilin                |                        2 |
+| Fukushima            |                        2 |
+| Florida              |                        2 |
+| Osaka                |                        2 |
+| Ohio                 |                        2 |
+| Lombardia            |                        2 |
+| Morelos              |                        2 |
+| Krasnojarsk          |                        2 |
+| Hidalgo              |                        2 |
+| Jharkhand            |                        2 |
+| Jalisco              |                        2 |
+| Chihuahua            |                        2 |
+| East Java            |                        2 |
+| al-Sharqiya          |                        2 |
+| KwaZulu-Natal        |                        2 |
+| Northern Mindanao    |                        2 |
+| Heilongjiang         |                        2 |
+| Khanh Hoa            |                        2 |
+| Zhejiang             |                        2 |
+| Esfahan              |                        3 |
+| Madhya Pradesh       |                        3 |
+| Dhaka                |                        3 |
+|                      |                        3 |
+| Bihar                |                        3 |
+| Okayama              |                        3 |
+| Henan                |                        3 |
+| Galicia              |                        3 |
+| Sichuan              |                        3 |
+| Nordrhein-Westfalen  |                        3 |
+| Central Java         |                        3 |
+| Gujarat              |                        3 |
+| Slaskie              |                        3 |
+| Coahuila de Zaragoza |                        3 |
+| Hiroshima            |                        3 |
+| Saitama              |                        3 |
+| Ondo & Ekiti         |                        3 |
+| Sumy                 |                        3 |
+| Ontario              |                        3 |
+| Minas Gerais         |                        3 |
+| Central Luzon        |                        3 |
+| Liaoning             |                        3 |
+| Central              |                        3 |
+| Andhra Pradesh       |                        3 |
+| Rio Grande do Sul    |                        3 |
+| Taipei               |                        4 |
+| Moskova              |                        4 |
+| Rajasthan            |                        4 |
+| Oyo & Osun           |                        4 |
+| Gauteng              |                        4 |
+| Guangdong            |                        4 |
+| Inner Mongolia       |                        4 |
+| Mxico                |                        4 |
+| West Java            |                        4 |
+| Guanajuato           |                        4 |
+| Illinois             |                        4 |
+| Texas                |                        5 |
+| Karnataka            |                        5 |
+| Gois                 |                        5 |
+| Punjab               |                        5 |
+| Hubei                |                        5 |
+| Tamil Nadu           |                        5 |
+| Southern Tagalog     |                        6 |
+| England              |                        7 |
+| Maharashtra          |                        7 |
+| Uttar Pradesh        |                        8 |
+| So Paulo             |                        8 |
+| California           |                        9 |
+| West Bengali         |                        9 |
+| Shandong             |                        9 |
+| Buenos Aires         |                       10 |
++----------------------+--------------------------+
+378 rows in set (0.00 sec)
+
+mysql> SELECT address, district FROM address GROUP BY district;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lco_films.address.address' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> SELECT district, COUNT(*) AS NoOfAddressesInADistrict FROM address GROUP BY district HAVING district = 'California' OR district = 'Ontario';
++------------+--------------------------+
+| district   | NoOfAddressesInADistrict |
++------------+--------------------------+
+| California |                        9 |
+| Ontario    |                        3 |
++------------+--------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT district, COUNT(*) AS NoOfAddressesInADistrict FROM address GROUP BY district HAVING district = 'California' OR district = 'Ontario' OR district = 'Sucre';
++------------+--------------------------+
+| district   | NoOfAddressesInADistrict |
++------------+--------------------------+
+| California |                        9 |
+| Sucre      |                        2 |
+| Ontario    |                        3 |
++------------+--------------------------+
+3 rows in set (0.00 sec)
+
+mysql>

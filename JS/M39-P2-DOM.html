@@ -1,0 +1,34 @@
+<!-- DOM MANIPULATING ELEMENTS(CREATING & DELETING) USING JS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+</head>
+<body>
+    <ul>
+        <li>windmill</li>
+        <li>zou</li>
+        <li>wano</li>
+    </ul>
+    <script>
+        let h = document.createElement("h1")
+        h.style.color = "green"
+        h.style.fontSize = "30px"
+        h.className = "x"
+        h.textContent = "hello"
+        document.body.appendChild(h)
+
+        // document.body.removeChild(h)
+
+        let ul = document.querySelector("ul")
+        let li1 = document.querySelectorAll("li")
+        for(i of li1)
+        {
+            ul.removeChild(i)
+        }
+        
+    </script>
+</body>
+</html>

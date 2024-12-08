@@ -1,0 +1,56 @@
+<!--            DOCUMENT OBJECT MODEL              -->
+<!-- 
+The DOM, or Document Object Model, is essentially the structure of a webpage. It's a hierarchical representation of the HTML elements, and it allows JavaScript to interact with the page. Imagine it as a tree where every HTML tag is a branch or a leaf, which JavaScript can access, manipulate, and modify to make the page dynamic.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-1</title>
+</head>
+<body>
+    <ul class="li1">
+        <li class="liclass">luffy</li>
+        <li class="liclass">zoro</li>
+        <li class="liclass">nami</li>
+    </ul>
+
+    <h2 id="id-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, numquam?</h2>
+    <h2 class="class-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, numquam?</h2>
+
+    <h3><span style="color: blue;">Lorem,</span> ipsum dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, beatae.</h3>
+
+    <script>
+        // id
+        let i = document.getElementById("id-heading")
+        console.log("targeting by id ",i);
+        console.log("targeting by id | only the text will be displayed->",i.innerText);
+
+        // class
+        let c = document.getElementsByClassName("class-heading")
+        console.log("targeting by class name ",c);
+        
+        let c2 = document.getElementsByClassName("liclass")
+        console.log("the element in pos 1 will be displayed: ",c2[1].innerText);
+        // we can manipulate the objects
+        c2[2].innerText = "Robin" 
+        c2[2].style.color = "red"
+
+        
+        // tag name
+        let tg = document.getElementsByTagName("h3")
+        console.log("targeting by tag name ",tg.innerText);
+
+        // querry selector --> using this we can target an obj by its id/class/tag name
+
+        let q = document.querySelector(".li1")
+        // let q = document.querySelectorAll(".li1") --> is used to select all the items
+        
+        console.log("using query selector ",q);
+        q.className = "list-one"
+        q.classList = "the only list"
+        q.setAttribute("title","Strawhat Pirates")
+    </script>
+</body>
+</html>

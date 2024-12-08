@@ -1,0 +1,506 @@
+$ if you give any style in inline format it is given the top most priority regardless less if the html folder is linked before or after internal css line of code
+<style> : used in the html doc to apply styling to the web page (internal css)
+* : universal selector , applies the same style to every element in the page
+
+○  SELECTORS:
+            main p{}
+        /* this type of css combinator: here the bgc is applied to all the p tags which are available in the main element regardless whether its enclosed in another element */
+       
+            main > p{}
+        /* this type of css combinator: here the bgc is applied to all the p tags which are available in the main element if and only if they arent the child of another element in the main element */
+        
+            h2 + p{}
+        /*  this type of css combinator: here the bgc is applied to the p element just after the h2 element */
+        
+            h3 ~ p{}
+        /* this type of css combinator: here the bgc is applied to all the p element after the h3 element */
+        
+            [target="_blank"] {}
+        /* this is an attribute selector: here the bgc is applied to where ever attribute"target=_blank" is present */
+        
+            [alt~="logo"]{}
+        /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to a value with "logo" shpuld be present at any position (e.g., logo 1, logo circle, great logo) */
+        
+            [alt|="##logo"]{}
+         /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to value with "##logo" (e.g., ##logo) */
+        
+            [alt^="logo"]{}
+        /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to value starts with "logo"(e.g., logo123) */
+        
+            [alt$="logo"]{}
+        /* this is an attribute selector: here the styling is applied to the element where ever the attribute equal to value ends with "logo"(e.g., logo123) */
+        
+
+○IMPORTING OF FONTS
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+     h1{
+            font-family: 'Roboto', sans-serif; 
+        }
+
+● ADDING IMAGES TO WEBPAGE AND MODIFICATION METHODS
+     body{
+            background-image: url(./IMAGES/wallpaperflare.com_wallpaper.jpg);
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center;
+            
+            /* background-image: url(./IMAGES/wallpaperflare.com_wallpaper.jpg) no-repeat fixed center; */
+            
+        }
+○ Text modification methods
+     .text{
+            color: #6f0ce1;
+            text-align: center;
+            text-align-last: left;
+            text-decoration:underline;
+            text-indent: 35px;
+            letter-spacing: 2px;
+            line-height: 25px;
+            word-spacing: 7px;
+            direction: ltr;
+        }
+
+○ Font modification methods  
+    .font{
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+            font-size: 20px;
+            font-style: italic;
+            /* font-style: -> may or may not be supported in different browsers */
+            font-variant:small-caps;
+            font-weight: 400;   
+        }
+
+● display: inline-block;
+            /* display: inline-block; with this we can set custom width of an element which acts like a block lv element */
+
+○ PSEUDO CLASS
+
+(1)    .paragraph:hover{
+        background-color: #414141;
+        color: #7fffd4;
+    }
+
+    --> The :hover selector is for selecting the elements when we move the mouse on 
+    them. We can use it on almost every HTML element.
+
+(2)    #txt-box:focus{
+        background-color: #808080;
+        color: #7fffd4;
+        font-size: 20px;
+    }
+
+    --> The :focus selector is used to select the element that has focus
+
+(3)      .link-2:first-child{
+        background-color: #ee0d0d;
+    }
+
+    -->  The :first-child selector is used to select the specified selector, only if it is the first child of its parent
+
+(4)     .link-2:nth-child(2n + 1){
+        background-color: #00ffff;
+    }
+
+    -->  The :nth-child(n) selector matches every element that is the nth child of its parent
+
+● PSEUDO ELEMENTS
+
+(1)     .lorem::first-line{
+        color: #0ce5ba;
+    }
+
+    -->  The ::first-line pseudo-element is used to add a special style to the first line of a text.
+    
+    Note: The ::first-line pseudo-element can only be applied to block-level elements
+
+(2)     .lorem::first-letter{
+        font-size: 85px;
+        font-weight: 800;
+    }
+
+    --> The ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+    Note: The ::first-letter pseudo-element can only be applied to block-level elements
+
+(3)      .lorem::after{
+        content: "~~~";
+    }
+
+    --> The ::after pseudo-element can be used to insert some content and apply styles after the content of an element
+
+(4)     .lorem::before{
+        content: "#";
+    }
+
+    --> The ::before pseudo-element can be used to insert some content and apply styles before the content of an element
+
+(5)     ::marker{
+        color: #ee0de3;
+    }
+
+    --> The ::marker pseudo-element selects the markers of list items
+
+(6)     ::selection{
+        background-color: #0ee44084
+    }
+
+    -->  The ::selection pseudo-element matches the portion of an element that is selected by a user.
+    The following CSS properties can be applied to ::selection: color, background, cursor, and outline
+
+● GRADIENT
+
+(1) Linear Gradient
+    .gradient-1{
+        height: 750px;
+        background-image: linear-gradient(turquoise , #1e0080);
+        /* linear-gradient(to top ,turquoise , #1e0080);
+        linear-gradient(to left ,turquoise , #1e0080); 
+        linear-gradient(to right ,turquoise , #1e0080);
+        linear-gradient(to bottom ,turquoise , #1e0080);*/
+    }
+
+(2) Radial Gradient
+
+    .gradient-2{
+        height: 750px;
+        background-image: radial-gradient( #e90a0a , #ffffff  , yellow );
+        /* background-image: radial-gradient(circle , #e90a0a , white) ; 
+        background-image: repeating-radial-gradient( #e90a0a 0% , #ffffff 10% , yellow 30%);*/
+    }
+
+(3) Conic Gradient
+
+     .gradient-3{
+        height:750px;
+        background-image: conic-gradient(black , rgb(233, 11, 11));
+    }
+
+● TRANSITONS
+     div,img{
+           height: 75px;
+           width: 300px;
+           background-color: #414141;
+           transition: height 0.8s, width 0.8s;
+           transition-timing-function: ease-in-out;
+           transition-delay: 0.5s;
+           
+        }
+
+        div,img:hover{
+            height: 50px;
+            width:250px;
+        }
+
+○ TOOLTIP
+
+    In any html element use (title="tooltip content") to create a tool tip
+
+○ ANIMATION
+
+    div{
+        animation-name: pixel-dust;
+    }
+
+    @keyframes pixel-dust{
+        /* what changes you want to occur for the 'div' */
+    }
+
+    e.g., 
+        div{
+            height:100px;
+            width: 100px;
+            background-color: #f10a0a;
+            position: relative;
+            animation-name: color-change;
+            animation-duration: 3.5s;
+            animation-delay: 1s;
+            animation-iteration-count: 2;
+            /* animation-direction: alternate-reverse; */
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        }
+
+        @keyframes color-change{
+            0% {
+                background-color: #eb670f;
+                left: 0px;
+                top: 0px;
+            }
+            
+            25% {
+                background-color: aquamarine; 
+                left: 200px;
+                top: 0px;
+            }
+        }
+
+○ MEDIA QUERIES
+    media queries is used to set the dimensions of ur website for different devices i.e., different resolutions
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- veiwport : the visible area in a screen of a device -->
+
+    @media(450px <= width <= 750px){
+    body {
+        background-color: purple;
+    }
+    div::after{
+        content: 'screnn is in b/w 450px & 750px';
+        background-image: url(./IMAGES/one\ piece\ logo.jpg);
+        height: 50px;
+    }
+}
+
+○   TYPICAL BREAK POINTS FOR MEDIA QUERIES
+
+    body{
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    /* extra small devices(phones, <=600px) */
+    @media (max-width: 600px ) {
+        body{
+            background-color: #fff;
+        }
+    }
+
+    /* small devices(portrait tablets and large phones, >=600px) */
+    @media (min-width: 600px) {
+        body{
+            background-color: #ffffff;
+        }
+    }
+
+    /* medium devices(landscape tablets, >=768px) */
+    @media (min-width: 768px) {
+        body{
+            background-color: #f5afaf;
+        }
+    }
+
+    /*large devices(laptops/desktops, >=992px) */
+    @media (min-width: 992px) {
+        body{
+            background-color: #f94343;
+        }
+    }
+
+    /*extra large devices(large laptops and desktops, 1200px) */
+    @media (min-width: 1200px) {
+        body{
+            background-color: #fe0000;
+        }
+    } 
+
+○ POSITION
+    (1) position: absolute; - pos wrt parent position
+    
+    (2) position: relative; - pos wrt original position
+    
+    (3) position: fixed; - pos will remain fixed i.e., element will not move even if web page is scrolled
+    
+    (4)position: sticky; - it will stick to the position until the element ends
+
+    use these elements when using position
+        top: 15px;
+        left: 15px;
+        right: 50px;
+        bottom: 50px;
+    
+● Overflow 
+    The overflow property in CSS determines what happens to content that is too large 
+    to fit in an element's box.
+
+    ● visible - Default. The overflow is not clipped. The content renders outside the 
+    element's box
+    ● hidden - The overflow is clipped, and the rest of the content will be invisible
+    ● scroll - The overflow is clipped, and a scrollbar is added to see the rest of the 
+    content
+    ● auto - Similar to scroll, but it adds scrollbars only when necessary
+
+
+○ Z-Index.
+    The z-index property in CSS is used to specify the stack order of an element. An 
+    element with a higher z-index value will be placed in front of an element with a 
+    lower z-index value.
+    The value of the z-index property is an integer, the element with a higher number is 
+    placed on top of the elements with lower numbers.
+
+○ display:flex
+    1. Flex Container Properties
+        a. display
+            It is used to define a flex container.  defining a flex container using display flex or inline-flex,
+
+        b. flex-direction
+            It is used to define the direction in which all the flex items should be laid out
+            
+            There can be four values of a flex direction-
+            1. row
+            2. row-reverse
+            3. column
+            4. column-reverse
+
+        c. flex-wrap
+            This property is used to define whether the flex items should wrap themself to fit 
+            the container width or not if the total required width of flex items are more than the flex container width.
+            
+            Flex wrap can have three possible values-
+            1. nowrap
+            2. wrap
+            3. wrap-reverse
+
+        d. flex-flow
+            It is a shorthand property for setting both flex-direction and flex-wrap properties in one line.
+    
+            Syntax- flex-flow: flex-direction flex-wrap
+        
+        e. justify-content
+            It is used to align the flex items along with the main axis of the container within the flexbox layout.
+            
+            It can have these possible values-
+            1. flex-start
+            2. flex-end
+            3. center
+            4. space-between
+            5. space-around
+            6. space-evenly
+
+        f. align-items
+            It is used to align the flex items along with the cross axis of the container within the flexbox layout. 
+            
+            It can have these possible values-
+            1. stretch
+            2. flex-start
+            3. flex-end
+            4. center
+            5. baseline
+
+        g. align-content
+            This property is used to align a flex container’s lines within it when there is extra space in the cross axis, similar to that of justify-content property which works on the main-axis. There should be more than one line to function the align content.
+
+            It can have these possible values-
+            1. stretch
+            2. flex-start
+            3. flex-end
+            4. center
+            5. space-between
+            6. space-around
+
+        h. gap
+            This property defines the amount of space between the rows and columns of a flex container. The gap is a shorthand property for defining the row-gap and column-gap.
+            
+            Syntax
+                1. gap:10px;
+                    This is similar to row-gap:10px and column-gap:10px
+                2. gap:10px 20px
+                    This is similar to row-gap:10px and column-gap:20px
+    2.Flex Items Property
+        These are the properties that are used over the flex items (child elements). Flex items properties are as follows- 
+        
+        a. order
+            This property defines the order of a flex item within its flex container. We can use this property to set the position of individual flex items within the flex container.The default value of order is 0 and the flex items will be sorted in ascending order.
+
+            .box1 {
+            background-color: red;
+            order: 3; 
+        }
+        .box2 {
+            background-color: yellow;
+            order: 2; 
+        }
+        .box3 {
+            background-color: turquoise;
+             order: 1;
+            }
+
+        b. flex-grow
+        This property defines the proportion of available space (size of flex container - total size of flex items) each element should take up within the container..
+             
+             .box2 {
+            background-color: yellow;
+            order: 2; 
+            flex-grow: 10; 
+            align-self: center;
+        }
+
+        c. flex-shrink
+            This property defines that in which proportion a flex item should shrink if the flex container is smaller than the total size of flex items
+
+        d. flex-basis
+            It is used to set the initial size of the flex items before the space is distributed 
+            according to flex grow or flex shrink.
+
+        e. flex
+            It is the shorthand property which sets the values of flex-grow, flex-shrink and flex-basis.
+        
+        f. align-self
+            This property is used to align a flex item inside its flex container.
+            1. stretch:- This is default value for the align self, which stretches the element to fill 
+            its flex container height.
+            2. flex-start: The flex-item will be aligned at the start of the cross axis.
+            3. flex-end: The flex-item will be aligned at the end of the cross axis.
+            4. center: The flex-item will be aligned at the center of the cross axis.
+            5. baseline: The flex-item will be aligned with the baseline of the cross axis.
+
+
+●   
+○ 
+○
+● 
+○ 
+○ 
+● 
+○ 
+● 
+● 
+● 
+○ 
+○ 
+○ 
+○ 
+○ 
+● 
+○ 
+○ 
+● 
+○ 
+○
+● 
+○ 
+○ 
+● 
+○ 
+● 
+● 
+● 
+○ 
+○ 
+○ 
+○ 
+○ 
+● 
+○ 
+○ 
+● 
+○ 
+○
+● 
+○ 
+○ 
+● 
+○ 
+● 
+● 
+● 
+○ 
+○ 
+○ 
+○ 
+○ 
+● 
+○ 
+○ 
+● 

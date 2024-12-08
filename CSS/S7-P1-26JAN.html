@@ -1,0 +1,149 @@
+<!-- Margin & Padding | Text modification methods | Font modification methods | Display methods | height , width & Box Sizing-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin & Padding</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        .Padding{
+            font-family: 'Roboto', sans-serif;
+            padding: 30px 15px 40px 5px ;
+            /* padding: top right bottom left */
+            background-color: #f5e20c;
+            border: 5px solid #6f0ce1;
+            /* padding: 30px 15px | here top & bottom = 30px , 15px = left & right */
+            /* padding: 20px 10px 30px | here top = 20px , right & left = 10px , bottom = 20px */
+        }
+        
+        .margin{
+            font-family: 'Roboto', sans-serif;
+            margin: 25px 30px 50px 10px;
+            background-color: #db1111;
+            border: 5px solid #f5e20c;
+        }
+
+        .text{
+            color: #6f0ce1;
+            text-align: center;
+            text-align-last: left;
+            text-decoration:underline;
+            text-indent: 35px;
+            letter-spacing: 2px;
+            line-height: 25px;
+            word-spacing: 7px;
+            direction: ltr;
+        }
+
+        .font{
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+            font-size: 20px;
+            font-style: italic;
+            /* font-style: -> may or may not be supported in different browsers */
+            font-variant:small-caps;
+            font-weight: 400;   
+        }
+
+        .disp-seq1{
+            display: inline;
+            border: 2px solid #6f0ce1;
+        }
+        .disp-seq2 span{
+            display: inline-block;
+            /* display: inline-block; with this we can set custom width of an element which acts like a block lv element */
+            width: 200px;
+            border: 2px solid #6f0ce1;
+        }
+
+        .width{
+            /* width: 125px; */
+            border: 2px solid #00ffff;
+            max-width: 100px;
+            display: inline-block;
+            overflow: hidden;
+        }
+        
+        .height{
+            border: #f5e20c 2px solid;
+            max-height: 115px;
+            overflow: scroll;
+        }
+
+        .box{
+            border: #8800ff 20px solid;
+            height: 150px;
+            width: 150px;
+            display: inline-block;
+            box-sizing: border-box;
+            text-align:center;
+            background-color: #f50606;
+            padding: 30px;
+        }
+
+        .b1 {
+            background-color: purple;
+            height: 150px;
+            width: 150px;
+            display: inline-block;
+            border: #00ffff 20px solid;
+            padding: 30px ;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- padding mods -->
+    <p class="Padding">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla itaque aspernatur ipsam vero labore.
+    </p>
+
+    <!-- margin mods -->
+    <p class = "margin">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem amet aliquid id est hic, ea aspernatur qui quisquam eligendi nulla?
+    </p>
+
+    <!-- text mods -->
+    <p class="text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti molestiae nam, similique libero quam laudantium in? Doloribus voluptas error voluptatem, perspiciatis quae architecto sed veritatis amet, ab magnam iure inventore suscipit, voluptate qui ea laborum rerum quasi ullam nesciunt quam.
+
+    </p>
+
+    <!-- Font mods -->
+    <p class="font">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta repellendus ducimus sed quis expedita, voluptatum alias perspiciatis facilis culpa ut necessitatibus ea vero minima porro vitae omnis perferendis praesentium cupiditate eius! Voluptatem, rem! Assumenda nisi quidem dolorum distinctio sed!
+
+    </p>
+
+    <!-- Display methods -->
+    <div>
+        <p class="disp-seq1">Lorem ipsum dolor sit amet.</p>
+        <p class="disp-seq1">Lorem ipsum dolor sit amet.</p>
+        <p class="disp-seq1">Lorem ipsum dolor sit amet.</p>
+    </div>
+    <hr />
+    <div class="disp-seq2">
+        <span>Lorem, ipsum dolor.</span>
+        <span>Lorem, ipsum dolor.</span>
+        <span>Lorem, ipsum dolor.</span>
+    </div>
+    <hr>
+    <!-- width -->
+    <p class="width">
+        12312322321213321321 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quos ex ad corporis, nihil consequuntur excepturi repudiandae commodi nemo fuga officiis doloremque autem, adipisci exercitationem reiciendis provident nobis neque delectus!
+
+    </p>
+    <!-- height -->
+    <p class="height">
+        Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate debitis corporis voluptates distinctio rerum a, suscipit aliquam nam eos ducimus at, voluptas odit, est et atque animi. Blanditiis ab dolor cupiditate. Facere mollitia perspiciatis ratione tempora est ea sit provident deleniti hic perferendis laudantium quis, dolore itaque molestiae aspernatur quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum facere incidunt, harum beatae dolores fuga fugit laborum molestias culpa perferendis repellendus, ipsa enim accusamus provident eaque dolor asperiores? Consequatur voluptatum necessitatibus temporibus optio fugiat ipsam in maiores doloremque quos incidunt sequi exercitationem vitae mollitia totam labore, tempora similique fuga nobis.
+    </p>
+    <!-- box sizing -->
+    <p class="box">Lorem ipsum dolor sit amet.</p>
+    <p class="box">Lorem ipsum dolor sit amet.</p>
+    <p class="box">Lorem ipsum dolor sit amet.</p>
+    <p class="b1">Lorem ipsum dolor sit amet.</p>
+</body>
+</html>
